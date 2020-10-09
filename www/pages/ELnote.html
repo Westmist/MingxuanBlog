@@ -2,12 +2,8 @@
 <html lang="zh-CN">
 
 <head>
-    <!-- <meta name="generator" content="Hexo 3.8.0"> -->
     <meta charset="utf-8">
     <meta name="keywords" content="EL表达式">
-    <meta name="baidu-site-verification" content="fmlEuI34ir">
-    <meta name="google-site-verification" content="KeoTn_OFy4ndJwXNmm2gMeQfPhd7alqE9vQDwI32KCY">
-
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -184,16 +180,10 @@
                     }
                 }
             </style>
-
         </nav>
-
     </header>
 
-
-
-
-
-    <div class="bg-cover pd-header post-cover" style="background-image: url('../images/pages/milky.jpg')">
+    <div class="bg-cover pd-header post-cover" style="background-image: url('../images/homepage/stones.jpg')">
         <div class="container">
             <div class="row">
                 <div class="col s12 m12 l12">
@@ -334,7 +324,7 @@
                             <div class="post-info">
                                 <div class="post-date info-break-policy">
                                     <i class="fa fa-calendar-minus-o fa-fw"></i>发布日期:&nbsp;&nbsp;
-                                    2020-01-20
+                                    2020-01-09
                                 </div>
 
                                 <div class="post-author info-break-policy">
@@ -348,24 +338,19 @@
                                 <!-- 
                                 <div class="info-break-policy">
                                     <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                                    22.4k
+                                    999k
                                 </div>
 
 
 
                                 <div class="info-break-policy">
                                     <i class="fa fa-clock-o fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                                    80 分
+                                    99 分
                                 </div> -->
-
-
-
 
                                 <span id="busuanzi_container_site_pv" style="display:none"></span>
                                 <i class="fa fa-eye fa-fw"></i>阅读次数:&nbsp;&nbsp;
                                 <span id="busuanzi_value_page_pv"></span>
-
-
 
                             </div>
                         </div>
@@ -482,17 +467,20 @@ ${param.live[2]}</code></pre>
 response.addCookie(cookie);
 &lt;!-- 获取Cookie的值 --&gt;
 ${cookie.user.values}</code></pre>
-                                <h4 id="六、定义和使用EL函数"><a href="#六、定义和使用EL函数" class="headerlink" title="六、定义和使用EL函数"></a>六、定义和使用EL函数</h4>
+                                <h4 id="六、定义和使用EL函数"><a href="#六、定义和使用EL函数" class="headerlink"
+                                        title="六、定义和使用EL函数"></a>六、定义和使用EL函数</h4>
                                 <p>在jsp中使用EL函数需要导入依赖 jstl.jar 和 standard.jar</p>
                                 <ol>
                                     <li>
                                         <p>在WEB-INF目录中创建JSP Tag Library Descriptor文件(标签库描述文件)</p>
                                     </li>
                                     <li>
-                                        <p>jsp中引入jstl支持 <code>&lt;%@taglib prefix="fn" uri="/stringDeal" %&gt;</code></p>
+                                        <p>jsp中引入jstl支持 <code>&lt;%@taglib prefix="fn" uri="/stringDeal" %&gt;</code>
+                                        </p>
                                     </li>
                                 </ol>
-                                <h5 id="将换行和空格进行Html转义"><a href="#将换行和空格进行Html转义" class="headerlink" title="将换行和空格进行Html转义"></a>将换行和空格进行Html转义</h5>
+                                <h5 id="将换行和空格进行Html转义"><a href="#将换行和空格进行Html转义" class="headerlink"
+                                        title="将换行和空格进行Html转义"></a>将换行和空格进行Html转义</h5>
                                 <p>在src中创建EL函数的类(普通的java类):</p>
                                 <pre class="language-java"><code class="language-java">import com.elfun.StringDeal;
 public class StringDeal {
@@ -503,14 +491,14 @@ public class StringDeal {
         return newstr;
     }
 }</code></pre>
-                             <p>转义前的JSP页面：</p>
-                             <pre class="language-jsp"><code class="language-jsp">&lt;form name="form" method="get" action="deal.jsp"&gt;
+                                <p>转义前的JSP页面：</p>
+                                <pre class="language-jsp"><code class="language-jsp">&lt;form name="form" method="get" action="deal.jsp"&gt;
 &lt;textarea name="field" rows="9" cols="70"&gt;&lt;/textarea&gt;
 &lt;br&gt;
 &lt;input name="button" type="submit" value="提交"&gt;
 &lt;/form&gt;</code></pre>
-                             <p>转义后的JSP页面：</p>
-                             <pre class="language-jsp"><code class="language-jsp">&lt;%@ taglib prefix="fn" uri="/stringDeal" %&gt;
+                                <p>转义后的JSP页面：</p>
+                                <pre class="language-jsp"><code class="language-jsp">&lt;%@ taglib prefix="fn" uri="/stringDeal" %&gt;
 &lt;%requset.setCharacterEncoding("UTF-8");%&gt;
 &lt;html&gt;
 ${fn:shiftEnter(param.field)}
@@ -777,9 +765,6 @@ ${fn:shiftEnter(param.field)}
                 Copyright&copy; 2018-2020 mingxuanblog.cn
 
                 <br>
-                <!-- <span id="sitetime"></span><span class="my-face">ღゝ◡╹)ノ♡</span>
-                <br> -->
-
                 <span> 赣ICP备19007380号</span>
 
                 <br>
@@ -806,25 +791,14 @@ ${fn:shiftEnter(param.field)}
                     <i class="fa fa-github"></i>
                 </a>
 
-
-
                 <a href="#" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
                     <i class="fa fa-envelope-open"></i>
                 </a>
-
-
-
-
-
 
                 <a href="#" class="tooltipped" target="_blank" data-tooltip="访问我的QQ空间" data-position="top"
                     data-delay="50">
                     <i class="fa fa-qq"></i>
                 </a>
-
-
-
-
 
                 <a href="#" class="tooltipped" target="_blank" data-tooltip="RSS 订阅" data-position="top"
                     data-delay="50">
@@ -836,13 +810,6 @@ ${fn:shiftEnter(param.field)}
     </footer>
 
     <div class="progress-bar"></div>
-
-
-
-
-
-
-
 
     <!-- 回到顶部按钮 -->
     <div id="backTop" class="top-scroll">
@@ -859,14 +826,7 @@ ${fn:shiftEnter(param.field)}
     <script src="../libs/lightGallery/js/lightgallery-all.min.js"></script>
     <script src="../js/matery.js"></script>
 
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-
-
-
-
     <script src="../libs/others/clicklove.js"></script>
-
-
 
     <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
 

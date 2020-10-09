@@ -2,12 +2,8 @@
 <html lang="zh-CN">
 
 <head>
-    <!-- <meta name="generator" content="Hexo 3.8.0"> -->
     <meta charset="utf-8">
     <meta name="keywords" content="阿里巴巴编程约规">
-    <meta name="baidu-site-verification" content="fmlEuI34ir">
-    <meta name="google-site-verification" content="KeoTn_OFy4ndJwXNmm2gMeQfPhd7alqE9vQDwI32KCY">
-
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -28,10 +24,8 @@
     <link rel="stylesheet" type="text/css" href="../css/my.css">
 
     <script src="https://cdn.staticfile.org/jquery/2.2.0/jquery.min.js"></script>
-
-
-    <!-- 代码块渲染 -->
     <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.1.2/build/highlight.min.js"></script>
+
     <link rel="stylesheet" href="../css/prism-tomorrow.css" type="text/css">
 </head>
 
@@ -46,7 +40,6 @@
                         <span class="logo-span">Hi 明轩</span>
                     </a>
                 </div>
-
 
                 <a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i
                         class="fa fa-navicon"></i></a>
@@ -125,7 +118,6 @@
                             </a>
                         </li>
 
-
                         <li>
                             <a href="./aboutme.html" class="waves-effect waves-light">
                                 <i class="fa fa-fw fa-user-circle-o"></i>
@@ -189,11 +181,7 @@
 
     </header>
 
-
-
-
-
-    <div class="bg-cover pd-header post-cover" style="background-image: url('../images/pages/milky.jpg')">
+    <div class="bg-cover pd-header post-cover" style="background-image: url('../images/pages/mountain.jpg')">
         <div class="container">
             <div class="row">
                 <div class="col s12 m12 l12">
@@ -206,8 +194,6 @@
             </div>
         </div>
     </div>
-
-
 
     <main class="post-container content">
 
@@ -334,38 +320,30 @@
                             <div class="post-info">
                                 <div class="post-date info-break-policy">
                                     <i class="fa fa-calendar-minus-o fa-fw"></i>发布日期:&nbsp;&nbsp;
-                                    2020-01-20
+                                    2020-03-06
                                 </div>
 
                                 <div class="post-author info-break-policy">
                                     <i class="fa fa-user-o fa-fw"></i>作者:&nbsp;&nbsp;
-
                                     明轩
-
                                 </div>
-
 
                                 <!-- 
                                 <div class="info-break-policy">
                                     <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                                    22.4k
+                                    999k
                                 </div>
 
 
 
                                 <div class="info-break-policy">
                                     <i class="fa fa-clock-o fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                                    80 分
+                                    99分
                                 </div> -->
-
-
-
 
                                 <span id="busuanzi_container_site_pv" style="display:none"></span>
                                 <i class="fa fa-eye fa-fw"></i>阅读次数:&nbsp;&nbsp;
                                 <span id="busuanzi_value_page_pv"></span>
-
-
 
                             </div>
                         </div>
@@ -798,8 +776,8 @@ while (iterator.hasNext()) {
     if ("1".equals(item)) {
     list.remove(item);
     }
-}</code></pre>  
-                                    <p>说明：以上代码的执行结果肯定会出乎大家的意料，那么试一下把“1”换成“2”，会是同样的结果吗？</p>
+}</code></pre>
+                                        <p>说明：以上代码的执行结果肯定会出乎大家的意料，那么试一下把“1”换成“2”，会是同样的结果吗？</p>
                                     </li>
                                     <li>
                                         <p>【强制】
@@ -1340,8 +1318,8 @@ logger.debug("Processing trade with id: " + id + " and symbol: " + symbol);
                                     <li>
                                         <p>【参考】不要对单元测试存在如下误解： </p>
                                         <ul>
-                                            <li>那是测试同学干的事情。本文开发 手册 ，凡是本文内容都与开发同学强相关的。 </li>
-                                            <li>单元测试代码是多余的。 系统 的整体功能 与各单元部件的测试正常否是强相关。 </li>
+                                            <li>那是测试同学干的事情。本文开发手册 ，凡是本文内容都与开发同学强相关的。 </li>
+                                            <li>单元测试代码是多余的。 系统的整体功能与各单元部件的测试正常否是强相关。 </li>
                                             <li>单元测试代码不需要维护。 一年半载后，那么几乎处于废弃状态</li>
                                             <li>单元测试与线上故障没有辩证关系，好的单元测试能够最大限度地规避线上故障。</li>
                                         </ul>
@@ -1691,8 +1669,7 @@ logger.debug("Processing trade with id: " + id + " and symbol: " + symbol);
                                 <ol>
                                     <li>
                                         <p>【推荐】图中默认上层依赖于下层，箭头关系表示可直接依赖，如：开放接口层可以依赖于Web层，也可以直接依赖于Service层，依此类推：</p>
-                                        <p><img src="../images/pages/clean.png"
-                                                alt="MVC依赖关系示意图"></p>
+                                        <p><img src="../images/pages/clean.png" alt="MVC依赖关系示意图"></p>
                                         <ul>
                                             <li>
                                                 <p>开放接口层：可直接封装Service方法暴露成RPC接口；通过Web封装成http接口；进行网关安全控制、流量控制等。</p>
@@ -1941,7 +1918,9 @@ logger.debug("Processing trade with id: " + id + " and symbol: " + symbol);
                                     <i class="fa fa-angle-right fa-lg fa-fw text-color"></i>
                                     <a href="" class="b-link-green">阿里巴巴编程约规</a>
                                 </p>
-                                <p>本文摘自 <a href="https://github.com/alibaba/p3c/blob/master/Java%E5%BC%80%E5%8F%91%E6%89%8B%E5%86%8C%EF%BC%88%E5%B5%A9%E5%B1%B1%E7%89%88%EF%BC%89.pdf">《阿里巴巴开发手册》</a></p>
+                                <p>本文摘自 <a
+                                        href="https://github.com/alibaba/p3c/blob/master/Java%E5%BC%80%E5%8F%91%E6%89%8B%E5%86%8C%EF%BC%88%E5%B5%A9%E5%B1%B1%E7%89%88%EF%BC%89.pdf">《阿里巴巴开发手册》</a>
+                                </p>
                             </div>
 
                         </div>
@@ -2272,14 +2251,7 @@ logger.debug("Processing trade with id: " + id + " and symbol: " + symbol);
     <script src="../libs/lightGallery/js/lightgallery-all.min.js"></script>
     <script src="../js/matery.js"></script>
 
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-
-
-
-
     <script src="../libs/others/clicklove.js"></script>
-
-
 
     <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
 
@@ -2289,22 +2261,15 @@ logger.debug("Processing trade with id: " + id + " and symbol: " + symbol);
         hljs.initHighlightingOnLoad();
     </script>
 
-
     <!-- 鼠标点击烟花爆炸效果 -->
 
-
     <!-- 背景雪花飘落特效 -->
-
 
     <!-- 鼠标点击文字特效 -->
 
-
     <!-- 背景雪花飘落特效 -->
 
-
-
     <!-- 背景动态彩带 -->
-
 
     <script type="text/javascript">
         var windowWidth = $(window).width();
@@ -2312,9 +2277,6 @@ logger.debug("Processing trade with id: " + id + " and symbol: " + symbol);
             document.write('<script type="text/javascript" src="../libs/background/ribbon-dynamic.js"><\/script>');
         }
     </script>
-
-
-
 
 </body>
 
