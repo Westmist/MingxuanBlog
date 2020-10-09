@@ -1,0 +1,939 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+
+<head>
+    <!-- <meta name="generator" content="Hexo 3.8.0"> -->
+    <meta charset="utf-8">
+    <meta name="keywords" content="HelloSpring">
+    <meta name="baidu-site-verification" content="fmlEuI34ir">
+    <meta name="google-site-verification" content="KeoTn_OFy4ndJwXNmm2gMeQfPhd7alqE9vQDwI32KCY">
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="renderer" content="webkit|ie-stand|ie-comp">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <title>Hello Spring</title>
+    <link rel="icon" href="../favicon.ico">
+
+
+    <link rel="stylesheet" type="text/css"
+        href="https://cdn.staticfile.org/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="../libs/materialize/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="../libs/aos/aos.css">
+    <link rel="stylesheet" type="text/css" href="../libs/animate/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="../libs/lightGallery/css/lightgallery.min.css">
+    <link rel="stylesheet" type="text/css" href="../css/matery.css">
+    <link rel="stylesheet" type="text/css" href="../css/my.css">
+
+    <script src="https://cdn.staticfile.org/jquery/2.2.0/jquery.min.js"></script>
+
+
+    <!-- 代码块渲染 -->
+    <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.1.2/build/highlight.min.js"></script>
+    <link rel="stylesheet" href="../css/prism-tomorrow.css" type="text/css">
+</head>
+
+<body>
+
+    <header class="navbar-fixed">
+        <nav id="headNav" class="bg-color nav-transparent">
+            <div id="navContainer" class="nav-wrapper container">
+                <div class="brand-logo">
+                    <a href="#" class="waves-effect waves-light">
+                        <img src="../images/logo.png" class="logo-img" alt="LOGO">
+                        <span class="logo-span">Hi 明轩</span>
+                    </a>
+                </div>
+
+
+                <a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i
+                        class="fa fa-navicon"></i></a>
+                <ul class="right nav-menu">
+                    <li class="hide-on-med-and-down nav-item">
+                        <a href="../home.html" class="waves-effect waves-light">
+                            <i class="fa fa-home"></i>
+                            <span>首页</span>
+                        </a>
+                    </li>
+
+                    <li class="hide-on-med-and-down nav-item">
+                        <a href="./bookmarks.html" class="waves-effect waves-light">
+                            <i class="fa fa-tags"></i>
+                            <span>书签</span>
+                        </a>
+                    </li>
+
+                    <li class="hide-on-med-and-down nav-item">
+                        <a href="#" class="waves-effect waves-light">
+                            <i class="fa fa-bookmark"></i>
+                            <span>笔记</span>
+                        </a>
+                    </li>
+
+                    <li class="hide-on-med-and-down nav-item">
+                        <a href="#" class="waves-effect waves-light">
+                            <i class="fa fa-archive"></i>
+                            <span>宝箱</span>
+                        </a>
+                    </li>
+
+                    <li class="hide-on-med-and-down nav-item">
+                        <a href="#" class="waves-effect waves-light">
+                            <i class="fa fa-user-circle-o"></i>
+                            <span>关于</span>
+                        </a>
+                    </li>
+                </ul>
+
+                <div id="mobile-nav" class="side-nav sidenav">
+                    <div class="mobile-head bg-color">
+                        <img src="../images/logo.png" class="logo-img circle responsive-img">
+                        <div class="logo-name">明轩博客</div>
+                        <div class="logo-desc">
+                            技术指北大全
+                        </div>
+                    </div>
+
+                    <ul class="menu-list mobile-menu-list">
+                        <li>
+                            <a href="../home.html" class="waves-effect waves-light">
+                                <i class="fa fa-fw fa-home"></i>
+                                首页
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="./bookmarks.html" class="waves-effect waves-light">
+                                <i class="fa fa-fw fa-tags"></i>
+                                书签
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="#" class="waves-effect waves-light">
+                                <i class="fa fa-fw fa-bookmark"></i>
+                                笔记
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="#" class="waves-effect waves-light">
+                                <i class="fa fa-fw fa-archive"></i>
+                                宝箱
+                            </a>
+                        </li>
+
+
+                        <li>
+                            <a href="./aboutme.html" class="waves-effect waves-light">
+                                <i class="fa fa-fw fa-user-circle-o"></i>
+                                关于
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+
+            <style>
+                .nav-transparent .github-corner {
+                    display: none !important;
+                }
+
+                .github-corner {
+                    position: absolute;
+                    z-index: 10;
+                    top: 0;
+                    right: 0;
+                    border: 0;
+                    transform: scale(1.1);
+                }
+
+                .github-corner svg {
+                    color: #0f9d58;
+                    fill: #fff;
+                    height: 64px;
+                    width: 64px;
+                }
+
+                .github-corner:hover .octo-arm {
+                    animation: a 0.56s ease-in-out;
+                }
+
+                .github-corner .octo-arm {
+                    animation: none;
+                }
+
+                @keyframes a {
+
+                    0%,
+                    to {
+                        transform: rotate(0);
+                    }
+
+                    20%,
+                    60% {
+                        transform: rotate(-25deg);
+                    }
+
+                    40%,
+                    80% {
+                        transform: rotate(10deg);
+                    }
+                }
+            </style>
+
+        </nav>
+
+    </header>
+
+
+
+
+
+    <div class="bg-cover pd-header post-cover" style="background-image: url('../images/pages/milky.jpg')">
+        <div class="container">
+            <div class="row">
+                <div class="col s12 m12 l12">
+                    <div class="brand">
+                        <div class="description center-align post-title">
+                            Hello Spring!
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <main class="post-container content">
+
+
+        <link rel="stylesheet" href="../libs/tocbot/tocbot.css">
+        <style>
+            #articleContent h1::before,
+            #articleContent h2::before,
+            #articleContent h3::before,
+            #articleContent h4::before,
+            #articleContent h5::before,
+            #articleContent h6::before {
+                display: block;
+                content: " ";
+                height: 100px;
+                margin-top: -100px;
+                visibility: hidden;
+            }
+
+            #articleContent :focus {
+                outline: none;
+            }
+
+            .toc-fixed {
+                position: fixed;
+                top: 64px;
+            }
+
+            .toc-widget {
+                padding-left: 20px;
+            }
+
+            .toc-widget .toc-title {
+                margin: 35px 0 15px 0;
+                padding-left: 17px;
+                font-size: 1.5rem;
+                font-weight: bold;
+                line-height: 1.5rem;
+            }
+
+            .toc-widget ol {
+                padding: 0;
+                list-style: none;
+            }
+
+            #toc-content ol {
+                padding-left: 10px;
+            }
+
+            #toc-content ol li {
+                padding-left: 10px;
+            }
+
+            #toc-content .toc-link:hover {
+                color: #42b983;
+                font-weight: 700;
+                text-decoration: underline;
+            }
+
+            #toc-content .toc-link::before {
+                background-color: transparent;
+                max-height: 25px;
+            }
+
+            #toc-content .is-active-link {
+                color: #42b983;
+            }
+
+            #toc-content .is-active-link::before {
+                background-color: #42b983;
+            }
+
+            #floating-toc-btn {
+                position: fixed;
+                right: 20px;
+                bottom: 76px;
+                padding-top: 15px;
+                margin-bottom: 0;
+                z-index: 998;
+            }
+
+            #floating-toc-btn .btn-floating {
+                width: 48px;
+                height: 48px;
+            }
+
+            #floating-toc-btn .btn-floating i {
+                line-height: 48px;
+                font-size: 1.4rem;
+            }
+        </style>
+        <div class="row">
+            <div id="main-content" class="col s12 m12 l9">
+                <!-- 文章内容详情 -->
+                <div id="artDetail">
+                    <div class="card">
+                        <div class="card-content article-info">
+                            <div class="row tag-cate">
+                                <div class="col s7">
+
+                                    <div class="article-tag">
+
+                                        <a href="#" target="_blank">
+                                            <span class="chip bg-color">Spring</span>
+                                        </a>
+
+                                    </div>
+
+                                </div>
+                                <div class="col s5 right-align">
+
+                                    <div class="post-cate">
+                                        <i class="fa fa-bookmark fa-fw icon-category"></i>
+
+                                        <a href="#" class="post-category" target="_blank">
+                                            Spring
+                                        </a>
+
+                                    </div>
+
+                                </div>
+                            </div>
+
+                            <div class="post-info">
+                                <div class="post-date info-break-policy">
+                                    <i class="fa fa-calendar-minus-o fa-fw"></i>发布日期:&nbsp;&nbsp;
+                                    2020-08-17
+                                </div>
+
+                                <div class="post-author info-break-policy">
+                                    <i class="fa fa-user-o fa-fw"></i>作者:&nbsp;&nbsp;
+
+                                    明轩
+
+                                </div>
+
+
+                                <!-- 
+                                <div class="info-break-policy">
+                                    <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
+                                    22.4k
+                                </div>
+
+
+
+                                <div class="info-break-policy">
+                                    <i class="fa fa-clock-o fa-fw"></i>阅读时长:&nbsp;&nbsp;
+                                    80 分
+                                </div> -->
+
+
+
+
+                                <span id="busuanzi_container_site_pv" style="display:none"></span>
+                                <i class="fa fa-eye fa-fw"></i>阅读次数:&nbsp;&nbsp;
+                                <span id="busuanzi_value_page_pv"></span>
+
+
+
+                            </div>
+                        </div>
+
+
+
+                        <hr class="clearfix">
+                        <div class="card-content article-card-content">
+                            <div id="articleContent">
+                                <!-- 文章主体内容区 -->
+
+                                <h4 id="一、Spring概念"><a href="#一、Spring概念" class="headerlink"
+                                        title="一、Spring概念"></a>一、Spring概念</h4>
+                                <p>Spring 框架是 Java 平台的一个开源的全栈（Full-stack）应用程序框架和控制反转容器实现.
+                                </p>
+                                <h4 id="二、Spring 框架结构"><a href="#二、Spring 框架结构" class="headerlink"
+                                        title="二、Spring 框架结构"></a>二、Spring 框架结构</h4>
+                                <p>Spring 是模块化的，允许你挑选和选择适用于你的模块，不必要把剩余部分也引入.</p>
+                                <img src="../images/pages/spring.png" alt="Spring结构示意图">
+                                <h4 id="三、导入依赖"><a href="#三、导入依赖" class="headerlink" title="三、导入依赖"></a>三、导入依赖</h4>
+                                <p>在pom.xml文件中配置依赖的Maven坐标(SSM框架所需依赖)</p>
+                                <pre class="language-xml"><code class="language-xml">&lt;properties&gt;
+    &lt;!-- 配置SSM版本信息 --&gt;
+    &lt;spring.version&gt;5.0.2.RELEASE&lt;/spring.version&gt;
+    &lt;slf4j.version&gt;1.7.25&lt;/slf4j.version&gt;
+    &lt;log4j.version&gt;1.2.12&lt;/log4j.version&gt;
+    &lt;mysql.version&gt;8.0.19&lt;/mysql.version&gt;
+    &lt;mybatis.version&gt;3.4.5&lt;/mybatis.version&gt;
+&lt;/properties&gt;
+&lt;dependencies&gt;
+    &lt;!-- spring --&gt;
+    &lt;!-- aop相关的技术 --&gt;
+    &lt;dependency&gt;
+        &lt;groupId&gt;org.aspectj&lt;/groupId&gt;
+        &lt;artifactId&gt;aspectjweaver&lt;/artifactId&gt;
+        &lt;version&gt;1.6.8&lt;/version&gt;
+    &lt;/dependency&gt;
+    &lt;!-- aop --&gt;
+    &lt;dependency&gt;
+        &lt;groupId&gt;org.springframework&lt;/groupId&gt;
+        &lt;artifactId&gt;spring-aop&lt;/artifactId&gt;
+        &lt;version&gt;${spring.version}&lt;/version&gt;
+    &lt;/dependency&gt;
+    &lt;!-- context容器 --&gt;
+    &lt;dependency&gt;
+        &lt;groupId&gt;org.springframework&lt;/groupId&gt;
+        &lt;artifactId&gt;spring-context&lt;/artifactId&gt;
+        &lt;version&gt;${spring.version}&lt;/version&gt;
+    &lt;/dependency&gt;
+    &lt;!-- web --&gt;
+    &lt;dependency&gt;
+        &lt;groupId&gt;org.springframework&lt;/groupId&gt;
+        &lt;artifactId&gt;spring-web&lt;/artifactId&gt;
+        &lt;version&gt;${spring.version}&lt;/version&gt;
+    &lt;/dependency&gt;
+    &lt;!-- webmvc --&gt;
+    &lt;dependency&gt;
+        &lt;groupId&gt;org.springframework&lt;/groupId&gt;
+        &lt;artifactId&gt;spring-webmvc&lt;/artifactId&gt;
+        &lt;version&gt;${spring.version}&lt;/version&gt;
+    &lt;/dependency&gt;
+    &lt;!-- spring测试 --&gt;
+    &lt;dependency&gt;
+        &lt;groupId&gt;org.springframework&lt;/groupId&gt;
+        &lt;artifactId&gt;spring-test&lt;/artifactId&gt;
+        &lt;version&gt;${spring.version}&lt;/version&gt;
+    &lt;/dependency&gt;
+    &lt;!-- 事务 --&gt;
+    &lt;dependency&gt;
+        &lt;groupId&gt;org.springframework&lt;/groupId&gt;
+        &lt;artifactId&gt;spring-tx&lt;/artifactId&gt;
+        &lt;version&gt;${spring.version}&lt;/version&gt;
+    &lt;/dependency&gt;
+    &lt;!-- jdbc模板技术 --&gt;
+    &lt;dependency&gt;
+        &lt;groupId&gt;org.springframework&lt;/groupId&gt;
+        &lt;artifactId&gt;spring-jdbc&lt;/artifactId&gt;
+        &lt;version&gt;${spring.version}&lt;/version&gt;
+    &lt;/dependency&gt;
+    &lt;!-- 单元测试 --&gt;
+    &lt;dependency&gt;
+        &lt;groupId&gt;junit&lt;/groupId&gt;
+        &lt;artifactId&gt;junit&lt;/artifactId&gt;
+        &lt;version&gt;4.12&lt;/version&gt;
+        &lt;scope&gt;compile&lt;/scope&gt;
+    &lt;/dependency&gt;
+    &lt;!-- mysql连接 --&gt;
+    &lt;dependency&gt;
+        &lt;groupId&gt;mysql&lt;/groupId&gt;
+        &lt;artifactId&gt;mysql-connector-java&lt;/artifactId&gt;
+        &lt;version&gt;${mysql.version}&lt;/version&gt;
+    &lt;/dependency&gt;
+    &lt;!-- servlet --&gt;
+    &lt;dependency&gt;
+        &lt;groupId&gt;javax.servlet&lt;/groupId&gt;
+        &lt;artifactId&gt;servlet-api&lt;/artifactId&gt;
+        &lt;version&gt;2.5&lt;/version&gt;
+        &lt;scope&gt;provided&lt;/scope&gt;
+    &lt;/dependency&gt;
+    &lt;!-- jsp --&gt;
+    &lt;dependency&gt;
+        &lt;groupId&gt;javax.servlet.jsp&lt;/groupId&gt;
+        &lt;artifactId&gt;jsp-api&lt;/artifactId&gt;
+        &lt;version&gt;2.0&lt;/version&gt;
+        &lt;scope&gt;provided&lt;/scope&gt;
+    &lt;/dependency&gt;
+    &lt;!-- EL JL TL表达式 --&gt;
+    &lt;dependency&gt;
+        &lt;groupId&gt;jstl&lt;/groupId&gt;
+        &lt;artifactId&gt;jstl&lt;/artifactId&gt;
+        &lt;version&gt;1.2&lt;/version&gt;
+    &lt;/dependency&gt;
+    &lt;!-- log start --&gt;
+    &lt;dependency&gt;
+        &lt;groupId&gt;log4j&lt;/groupId&gt;
+        &lt;artifactId&gt;log4j&lt;/artifactId&gt;
+        &lt;version&gt;${log4j.version}&lt;/version&gt;
+    &lt;/dependency&gt;
+    &lt;dependency&gt;
+        &lt;groupId&gt;org.slf4j&lt;/groupId&gt;
+        &lt;artifactId&gt;slf4j-api&lt;/artifactId&gt;
+        &lt;version&gt;${slf4j.version}&lt;/version&gt;
+    &lt;/dependency&gt;
+    &lt;dependency&gt;
+        &lt;groupId&gt;org.slf4j&lt;/groupId&gt;
+        &lt;artifactId&gt;slf4j-log4j12&lt;/artifactId&gt;
+        &lt;version&gt;${slf4j.version}&lt;/version&gt;
+    &lt;/dependency&gt;
+    &lt;!-- log end --&gt;
+    &lt;!-- mybatis相关 --&gt;
+    &lt;dependency&gt;
+        &lt;groupId&gt;org.mybatis&lt;/groupId&gt;
+        &lt;artifactId&gt;mybatis&lt;/artifactId&gt;
+        &lt;version&gt;${mybatis.version}&lt;/version&gt;
+    &lt;/dependency&gt;
+    &lt;dependency&gt;
+        &lt;groupId&gt;org.mybatis&lt;/groupId&gt;
+        &lt;artifactId&gt;mybatis-spring&lt;/artifactId&gt;
+        &lt;version&gt;1.3.0&lt;/version&gt;
+    &lt;/dependency&gt;
+    &lt;!-- druid 连接池 --&gt;
+    &lt;dependency&gt;
+        &lt;groupId&gt;com.alibaba&lt;/groupId&gt;
+        &lt;artifactId&gt;druid&lt;/artifactId&gt;
+        &lt;version&gt;1.0.9&lt;/version&gt;
+    &lt;/dependency&gt;
+&lt;/dependencies&gt;</code></pre>
+                                <h4 id="四、Spring 的使用"><a href="#四、Spring 的使用" class="headerlink"
+                                        title="四、Spring 的使用"></a>四、Spring 的使用</h4>
+                                <h5 id="创建 Bean 类"><a href="#创建 Bean 类" class="headerlink" title="创建 Bean 类"></a>创建 Bean
+                                    类</h5>
+                                <pre class="language-java"><code class="language-java">public class HelloWorld {
+   private String message;
+   public void setMessage(String message){
+      this.message  = message;
+   }
+   public void sayMessage(){
+      System.out.println("Your Message : " + message);
+   }
+}</code></pre>
+                                <h5 id="Spring Bean 配置"><a href="#Spring Bean 配置" class="headerlink"
+                                        title="Spring Bean 配置"></a>Spring Bean 配置</h5>
+                                <p>在<code>resources</code>目录下创建 Spring 配置文件 Beans.xml，添加如下的 Bean 配置</p>
+                                <pre class="language-xml"><code class="language-xml">&lt;bean id="HelloSpring" class="com.study.HelloSpring"&gt;
+    &lt;property name="messages" value="Hello Spring!"&gt;&lt;/property&gt;
+&lt;/bean&gt;</code></pre>
+                                <h5 id="在 main 方法中使用 Bean"><a href="#在 main 方法中使用 Bean" class="headerlink"
+                                        title="在 main 方法中使用 Bean"></a>在 main 方法中使用 Bean</h5>
+                                <pre class="language-java"><code class="language-java">// 创建一个Spring的IOC容器对象
+ApplicationContext context = new ClassPathXmlApplicationContext("Beans.xml");
+// 从IOC容器中获取Bean实例
+HelloSpring obj = (HelloSpring) context.getBean("HelloSpring");
+// 调用sayMessages()方法
+obj.sayMessages();</code></pre>
+                                <h5 id="编译执行"><a href="#编译执行" class="headerlink" title="编译执行"></a>编译执行</h5>
+                                <p>在终端输出<code>Hello Spring!</code></p>
+                                <h4 id="五、总结"><a href="#五、总结" class="headerlink" title="五、总结"></a>五、总结</h4>
+                                <p>控制反转：上例中对象的创建不是通过 new 方式实现，而是交给 spring 配置创建类对象.</p>
+                                <p>依赖注入：依赖的对象没有通过手动调用 setXX 方法去设置，而是通过配置赋值.(配置 Beans.xml 中的 bean)</p>
+                            </div>
+                            <hr>
+
+                            <div class="reprint1">
+                                <p>
+                                    <span class="reprint1-tip">
+                                        <i class="fa fa-exclamation-circle"></i>&nbsp;&nbsp;转载请注明:
+                                    </span>
+                                    <a href="../home.html" class="b-link-green">明轩博客</a>
+                                    <i class="fa fa-angle-right fa-lg fa-fw text-color"></i>
+                                    <a href="" class="b-link-green">Hello Spring</a>
+                                </p>
+
+
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <article id="prenext-posts" class="prev-next articles">
+                        <div class="row article-row">
+
+                            <div class="article col s12 m6" data-aos="fade-up">
+                                <div class="article-badge left-badge text-color">
+                                    <i class="fa fa-chevron-left"></i>&nbsp;上一篇</div>
+                                <div class="card">
+                                    <a href="#">
+                                        <div class="card-image">
+
+                                            <img src="#" class="responsive-img" alt="Kafka消息中间件">
+
+                                            <span class="card-title">Kafka消息中间件</span>
+                                        </div>
+                                    </a>
+                                    <div class="card-content article-content">
+                                        <div class="summary block-with-text">
+
+                                            Apache Kafka是一个分布式发布-订阅消息系统和一个强大的队列,可以处理大量的数据.
+
+                                        </div>
+                                        <div class="publish-info">
+                                            <span class="publish-date">
+                                                <i class="fa fa-clock-o fa-fw icon-date"></i>2018-11-22
+                                            </span>
+                                            <span class="publish-author">
+
+                                                <i class="fa fa-bookmark fa-fw icon-category"></i>
+
+                                                <a href="#" class="post-category" target="_blank">
+                                                    基础组件
+                                                </a>
+
+
+                                            </span>
+                                        </div>
+                                    </div>
+
+                                    <div class="card-action article-tags">
+
+                                        <a href="#" target="_blank">
+                                            <span class="chip bg-color">中间件</span>
+                                        </a>
+
+                                    </div>
+
+                                </div>
+                            </div>
+
+
+                            <div class="article col s12 m6" data-aos="fade-up">
+                                <div class="article-badge right-badge text-color">
+                                    下一篇&nbsp;<i class="fa fa-chevron-right"></i>
+                                </div>
+                                <div class="card">
+                                    <a href="#">
+                                        <div class="card-image">
+
+                                            <img src="#" class="responsive-img" alt="MapReduce编程模型">
+
+                                            <span class="card-title">MapReduce编程模型</span>
+                                        </div>
+                                    </a>
+                                    <div class="card-content article-content">
+                                        <div class="summary block-with-text">
+
+                                            MapReduce 既是一个编程模型,又是一个计算框架,是一种非常简单又非常强大的编程模型.
+
+                                        </div>
+                                        <div class="publish-info">
+                                            <span class="publish-date">
+                                                <i class="fa fa-clock-o fa-fw icon-date"></i>2018-07-29
+                                            </span>
+                                            <span class="publish-author">
+
+                                                <i class="fa fa-bookmark fa-fw icon-category"></i>
+
+                                                <a href="#" class="post-category" target="_blank">
+                                                    大数据
+                                                </a>
+
+
+                                            </span>
+                                        </div>
+                                    </div>
+
+                                    <div class="card-action article-tags">
+
+                                        <a href="#" target="_blank">
+                                            <span class="chip bg-color">大数据</span>
+                                        </a>
+
+                                    </div>
+
+                                </div>
+                            </div>
+
+                        </div>
+                    </article>
+                </div>
+
+
+                <script>
+                    $('#articleContent').on('copy', function (e) {
+                        // IE8 or earlier browser is 'undefined'
+                        if (typeof window.getSelection === 'undefined') return;
+
+                        var selection = window.getSelection();
+                        // if the selection is short let's not annoy our users.
+                        if (('' + selection).length < Number.parseInt('120')) {
+                            return;
+                        }
+
+                        // create a div outside of the visible area and fill it with the selected text.
+                        var bodyElement = document.getElementsByTagName('body')[0];
+                        var newdiv = document.createElement('div');
+                        newdiv.style.position = 'absolute';
+                        newdiv.style.left = '-99999px';
+                        bodyElement.appendChild(newdiv);
+                        newdiv.appendChild(selection.getRangeAt(0).cloneContents());
+
+
+                        if (selection.getRangeAt(0).commonAncestorContainer.nodeName === 'PRE') {
+                            newdiv.innerHTML = "<pre>" + newdiv.innerHTML + "</pre>";
+                        }
+
+                        var url = document.location.href;
+                        newdiv.innerHTML += '<br />'
+                            + '来源: 明轩博客<br />'
+                            + '作者: 明轩<br />'
+                            + '链接: <a href="' + url + '">' + url + '</a><br />'
+                            + '本文章著作权归作者所有，任何形式的转载都请注明出处。';
+
+                        selection.selectAllChildren(newdiv);
+                        window.setTimeout(function () { bodyElement.removeChild(newdiv); }, 200);
+                    });
+                </script>
+
+
+            </div>
+            <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
+                <div class="toc-widget">
+                    <div class="toc-title"><i class="fa fa-list-alt"></i>&nbsp;&nbsp;目录</div>
+                    <div id="toc-content"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- TOC 悬浮按钮. -->
+
+        <div id="floating-toc-btn" class="hide-on-med-and-down">
+            <a class="btn-floating btn-large bg-color">
+                <i class="fa fa-list"></i>
+            </a>
+        </div>
+
+
+        <script src="../libs/tocbot/tocbot.min.js"></script>
+        <script>
+            $(function () {
+                tocbot.init({
+                    tocSelector: '#toc-content',
+                    contentSelector: '#articleContent',
+                    headingsOffset: -($(window).height() * 0.4 - 45),
+                    // headingsOffset: -205,
+                    headingSelector: 'h1, h2, h3, h4, h5'
+                });
+
+                // modify the toc link href to support Chinese.
+                let i = 0;
+                let tocHeading = 'toc-heading-';
+                $('#toc-content a').each(function () {
+                    $(this).attr('href', '#' + tocHeading + (++i));
+                });
+
+                // modify the heading title id to support Chinese.
+                i = 0;
+                $('#articleContent').children('h1, h2, h3, h4, h5').each(function () {
+                    $(this).attr('id', tocHeading + (++i));
+                });
+
+                // Set scroll toc fixed.
+                let tocHeight = parseInt($(window).height() * 0.4 - 64);
+                let $tocWidget = $('.toc-widget');
+                $(window).scroll(function () {
+                    let scroll = $(window).scrollTop();
+                    /* add post toc fixed. */
+                    if (scroll > tocHeight) {
+                        $tocWidget.addClass('toc-fixed');
+                    } else {
+                        $tocWidget.removeClass('toc-fixed');
+                    }
+                });
+
+
+                /* 修复文章卡片 div 的宽度. */
+                let fixPostCardWidth = function (srcId, targetId) {
+                    let srcDiv = $('#' + srcId);
+                    if (srcDiv.length === 0) {
+                        return;
+                    }
+
+                    let w = srcDiv.width();
+                    if (w >= 450) {
+                        w = w + 21;
+                    } else if (w >= 350 && w < 450) {
+                        w = w + 18;
+                    } else if (w >= 300 && w < 350) {
+                        w = w + 16;
+                    } else {
+                        w = w + 14;
+                    }
+                    $('#' + targetId).width(w);
+                };
+
+                // 切换TOC目录展开收缩的相关操作.
+                const expandedClass = 'expanded';
+                let $tocAside = $('#toc-aside');
+                let $mainContent = $('#main-content');
+                $('#floating-toc-btn .btn-floating').click(function () {
+                    if ($tocAside.hasClass(expandedClass)) {
+                        $tocAside.removeClass(expandedClass).slideUp(500);
+                        $mainContent.removeClass('l9');
+                    } else {
+                        $tocAside.addClass(expandedClass).slideDown(500);
+                        $mainContent.addClass('l9');
+                    }
+                    fixPostCardWidth('artDetail', 'prenext-posts');
+                });
+
+            });
+        </script>
+
+
+    </main>
+
+
+    <footer class="page-footer bg-color">
+        <div class="container row center-align">
+            <div class="col s12 m8 l8 copy-right">
+                Copyright&copy; 2018-2020 mingxuanblog.cn
+
+                <br>
+                <!-- <span id="sitetime"></span><span class="my-face">ღゝ◡╹)ノ♡</span>
+                <br> -->
+
+                <span> 赣ICP备19007380号</span>
+
+                <br>
+
+
+
+
+
+                <span id="busuanzi_container_site_pv" style="display:none"></span>
+                总访问量: <span id="busuanzi_value_site_pv" class="white-color"></span>
+
+
+
+                <span id="busuanzi_container_site_uv" style="display:none"></span>
+                人次&nbsp; | &nbsp;访客人数: <span id="busuanzi_value_site_uv" class="white-color"></span> 人
+
+                <br>
+
+            </div>
+
+            <div class="col s12 m4 l4 social-link social-statis">
+                <a href="#" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top"
+                    data-delay="50">
+                    <i class="fa fa-github"></i>
+                </a>
+
+
+
+                <a href="#" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
+                    <i class="fa fa-envelope-open"></i>
+                </a>
+
+
+
+
+
+
+                <a href="#" class="tooltipped" target="_blank" data-tooltip="访问我的QQ空间" data-position="top"
+                    data-delay="50">
+                    <i class="fa fa-qq"></i>
+                </a>
+
+
+
+
+
+                <a href="#" class="tooltipped" target="_blank" data-tooltip="RSS 订阅" data-position="top"
+                    data-delay="50">
+                    <i class="fa fa-rss"></i>
+                </a>
+            </div>
+
+        </div>
+    </footer>
+
+    <div class="progress-bar"></div>
+
+
+
+
+
+
+
+
+    <!-- 回到顶部按钮 -->
+    <div id="backTop" class="top-scroll">
+        <a class="btn-floating btn-large waves-effect waves-light" href="#!">
+            <i class="fa fa-angle-up"></i>
+        </a>
+    </div>
+
+
+    <script src="../libs/materialize/materialize.min.js"></script>
+    <script src="../libs/masonry/masonry.pkgd.min.js"></script>
+    <script src="../libs/aos/aos.js"></script>
+    <script src="../libs/scrollprogress/scrollProgress.min.js"></script>
+    <script src="../libs/lightGallery/js/lightgallery-all.min.js"></script>
+    <script src="../js/matery.js"></script>
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+
+
+
+
+    <script src="../libs/others/clicklove.js"></script>
+
+
+
+    <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+    <!-- 代码高亮 -->
+    <script>
+        hljs.initHighlightingOnLoad();
+    </script>
+
+
+    <!-- 鼠标点击烟花爆炸效果 -->
+
+
+    <!-- 背景雪花飘落特效 -->
+
+
+    <!-- 鼠标点击文字特效 -->
+
+
+    <!-- 背景雪花飘落特效 -->
+
+
+
+    <!-- 背景动态彩带 -->
+
+
+    <script type="text/javascript">
+        var windowWidth = $(window).width();
+        if (windowWidth > 992) {
+            document.write('<script type="text/javascript" src="../libs/background/ribbon-dynamic.js"><\/script>');
+        }
+    </script>
+
+
+
+
+</body>
+
+</html>

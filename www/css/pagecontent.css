@@ -1,0 +1,187 @@
+/* CSS Document */
+
+/* Post or Page content style */
+.content {
+	margin-top: 42px;
+	font-size: 15px;
+	line-height: 2;
+	color: #232323;
+}
+.content h1 {
+	font-size: 39px
+}
+.content h2 {
+	font-size: 32px
+}
+.content h3 {
+	font-size: 26px
+}
+.content h4 {
+	font-size: 19px
+}
+.content h5 {
+	font-size: 15px
+}
+.content h6 {
+	font-size: 13px
+}
+.content strong {
+	font-weight: 500;
+}
+.content a {
+	background: transparent;
+	color: #1980e6;
+	text-decoration: none;
+}
+.content a:hover {
+	color: #518dca;
+}
+.content hr {
+	margin-top: 21px;
+	margin-bottom: 21px;
+	border: 0;
+	border-top: 1px solid rgba(102,128,153,0.1)
+}
+.content p {
+	margin: 0.6em  0em;
+}
+.content ul, .content ol {
+	margin: 10px 0;
+	padding-left: 20px;
+}
+.content ul li {
+	list-style: disc;
+	margin: 5px 0;
+}
+.content ol li {
+	list-style: decimal;
+	margin: 5px 0;
+}
+.content > h1, .content > h2, .content > h3, .content > h4, .content > h5, .content > h6 {
+	margin-top: 1.8rem;
+	margin-bottom: 0.6rem;
+	color: #000;
+}
+.content > h1:first-child, .content > h2:first-child, .content > h3:first-child, .content > h4:first-child, .content > h5:first-child, .content > h6:first-child {
+	margin-top: 0;
+}
+.content img {
+	cursor: pointer;
+}
+
+figcaption span{
+	line-height:40px;
+}
+
+.content .highlight table {
+	margin: 0;
+	width: auto;
+}
+.content .highlight td {
+	border: none;
+	padding: 0;
+}
+.content .highlight tr {
+	border: 0;
+}
+.content .highlight figcaption a {
+	float: right;
+}
+
+
+.content .highlight figcaption {
+	font-size: 0.85em;
+	color: #999;
+	line-height: 1em;
+	margin-bottom: 1em;
+}
+.content .highlight {
+	background: #202020;
+	margin: 0.5rem 0;
+	padding: 0.8rem 0.8rem;
+	border-style: solid;
+	border-width: 1px 0;
+	overflow: auto;
+	color: #eee;
+	text-align: left;
+	line-height: 22px;
+}
+
+
+.content .highlight .line {
+	height: 20px;
+}
+
+.content .gutter {
+	display: none;
+}
+.content .highlight .gutter {
+	color: #EEEEEE;
+	font-size: 0.9rem;
+}
+
+span {
+	white-space: nowrap;
+}
+
+
+
+
+.content code {
+	font-family: "Source Code Pro", monospace
+}
+.content code {
+	background: rgba(99,99,99,0.07);
+	color: #3C4E8F;
+	padding: 1px 2px;
+	border-radius: 2px;
+}
+.content code {
+	background: none;
+	text-shadow: none;
+	padding: 0;
+}
+.content blockquote {
+	color: #656565;
+	margin: 0 0 1.1em;
+	border-left: 3px solid #efefef;
+	border-left-width: 6px;
+	background-color: #343638;
+	border-top-right-radius: 5px;
+	border-bottom-right-radius: 5px;
+	padding: 15px 20px;
+}
+.content blockquote p {
+	margin: 0;
+}
+.content table {
+	margin: 15px 0;
+	border-collapse: collapse;
+	display: table;
+	width: 100%;
+	table-layout: fixed;
+	word-wrap: break-word;
+}
+.content table tr {
+	border-top: 1px solid #ccc;
+	background-color: #fff;
+}
+.content table th, .content table td {
+	border: 1px solid #ddd;
+	padding: 6px 13px;
+}
+
+
+.content .video-container {
+	position: relative;
+	padding-bottom: 56.25%;
+	padding-top: 25px;
+	height: 0;
+}
+.content .video-container iframe {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+}

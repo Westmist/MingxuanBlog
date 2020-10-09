@@ -1,0 +1,897 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+
+<head>
+    <!-- <meta name="generator" content="Hexo 3.8.0"> -->
+    <meta charset="utf-8">
+    <meta name="keywords" content="常用扩展">
+    <meta name="baidu-site-verification" content="fmlEuI34ir">
+    <meta name="google-site-verification" content="KeoTn_OFy4ndJwXNmm2gMeQfPhd7alqE9vQDwI32KCY">
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="renderer" content="webkit|ie-stand|ie-comp">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <title>常用扩展</title>
+    <link rel="icon" href="../favicon.ico">
+
+    <link rel="stylesheet" type="text/css" href="https://cdn.staticfile.org/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="../libs/materialize/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="../libs/aos/aos.css">
+    <link rel="stylesheet" type="text/css" href="../libs/animate/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="../libs/lightGallery/css/lightgallery.min.css">
+    <link rel="stylesheet" type="text/css" href="../css/matery.css">
+    <link rel="stylesheet" type="text/css" href="../css/my.css">
+
+    <script src="https://cdn.staticfile.org/jquery/2.2.0/jquery.min.js"></script>
+
+
+    <!-- 代码块渲染 -->
+    <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.1.2/build/highlight.min.js"></script>
+    <link rel="stylesheet" href="../css/prism-tomorrow.css" type="text/css">
+</head>
+
+<body>
+
+    <header class="navbar-fixed">
+        <nav id="headNav" class="bg-color nav-transparent">
+            <div id="navContainer" class="nav-wrapper container">
+                <div class="brand-logo">
+                    <a href="#" class="waves-effect waves-light">
+                        <img src="../images/logo.png" class="logo-img" alt="LOGO">
+                        <span class="logo-span">Hi 明轩</span>
+                    </a>
+                </div>
+
+
+                <a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i
+                        class="fa fa-navicon"></i></a>
+                <ul class="right nav-menu">
+                    <li class="hide-on-med-and-down nav-item">
+                        <a href="../home.html" class="waves-effect waves-light">
+                            <i class="fa fa-home"></i>
+                            <span>首页</span>
+                        </a>
+                    </li>
+
+                    <li class="hide-on-med-and-down nav-item">
+                        <a href="./bookmarks.html" class="waves-effect waves-light">
+                            <i class="fa fa-tags"></i>
+                            <span>书签</span>
+                        </a>
+                    </li>
+
+                    <li class="hide-on-med-and-down nav-item">
+                        <a href="#" class="waves-effect waves-light">
+                            <i class="fa fa-bookmark"></i>
+                            <span>笔记</span>
+                        </a>
+                    </li>
+
+                    <li class="hide-on-med-and-down nav-item">
+                        <a href="#" class="waves-effect waves-light">
+                            <i class="fa fa-archive"></i>
+                            <span>宝箱</span>
+                        </a>
+                    </li>
+
+                    <li class="hide-on-med-and-down nav-item">
+                        <a href="#" class="waves-effect waves-light">
+                            <i class="fa fa-user-circle-o"></i>
+                            <span>关于</span>
+                        </a>
+                    </li>
+                </ul>
+
+                <div id="mobile-nav" class="side-nav sidenav">
+                    <div class="mobile-head bg-color">
+                        <img src="../images/logo.png" class="logo-img circle responsive-img">
+                        <div class="logo-name">明轩博客</div>
+                        <div class="logo-desc">
+                            技术指北大全
+                        </div>
+                    </div>
+
+                    <ul class="menu-list mobile-menu-list">
+                        <li>
+                            <a href="../home.html" class="waves-effect waves-light">
+                                <i class="fa fa-fw fa-home"></i>
+                                首页
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="./bookmarks.html" class="waves-effect waves-light">
+                                <i class="fa fa-fw fa-tags"></i>
+                                书签
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="#" class="waves-effect waves-light">
+                                <i class="fa fa-fw fa-bookmark"></i>
+                                笔记
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="#" class="waves-effect waves-light">
+                                <i class="fa fa-fw fa-archive"></i>
+                                宝箱
+                            </a>
+                        </li>
+
+
+                        <li>
+                            <a href="./aboutme.html" class="waves-effect waves-light">
+                                <i class="fa fa-fw fa-user-circle-o"></i>
+                                关于
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+
+            <style>
+                .nav-transparent .github-corner {
+                    display: none !important;
+                }
+
+                .github-corner {
+                    position: absolute;
+                    z-index: 10;
+                    top: 0;
+                    right: 0;
+                    border: 0;
+                    transform: scale(1.1);
+                }
+
+                .github-corner svg {
+                    color: #0f9d58;
+                    fill: #fff;
+                    height: 64px;
+                    width: 64px;
+                }
+
+                .github-corner:hover .octo-arm {
+                    animation: a 0.56s ease-in-out;
+                }
+
+                .github-corner .octo-arm {
+                    animation: none;
+                }
+
+                @keyframes a {
+
+                    0%,
+                    to {
+                        transform: rotate(0);
+                    }
+
+                    20%,
+                    60% {
+                        transform: rotate(-25deg);
+                    }
+
+                    40%,
+                    80% {
+                        transform: rotate(10deg);
+                    }
+                }
+            </style>
+
+        </nav>
+
+    </header>
+
+
+
+
+
+    <div class="bg-cover pd-header post-cover" style="background-image: url('../images/pages/milky.jpg')">
+        <div class="container">
+            <div class="row">
+                <div class="col s12 m12 l12">
+                    <div class="brand">
+                        <div class="description center-align post-title">
+                            常用扩展
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <main class="post-container content">
+
+
+        <link rel="stylesheet" href="../libs/tocbot/tocbot.css">
+        <style>
+            #articleContent h1::before,
+            #articleContent h2::before,
+            #articleContent h3::before,
+            #articleContent h4::before,
+            #articleContent h5::before,
+            #articleContent h6::before {
+                display: block;
+                content: " ";
+                height: 100px;
+                margin-top: -100px;
+                visibility: hidden;
+            }
+
+            #articleContent :focus {
+                outline: none;
+            }
+
+            .toc-fixed {
+                position: fixed;
+                top: 64px;
+            }
+
+            .toc-widget {
+                padding-left: 20px;
+            }
+
+            .toc-widget .toc-title {
+                margin: 35px 0 15px 0;
+                padding-left: 17px;
+                font-size: 1.5rem;
+                font-weight: bold;
+                line-height: 1.5rem;
+            }
+
+            .toc-widget ol {
+                padding: 0;
+                list-style: none;
+            }
+
+            #toc-content ol {
+                padding-left: 10px;
+            }
+
+            #toc-content ol li {
+                padding-left: 10px;
+            }
+
+            #toc-content .toc-link:hover {
+                color: #42b983;
+                font-weight: 700;
+                text-decoration: underline;
+            }
+
+            #toc-content .toc-link::before {
+                background-color: transparent;
+                max-height: 25px;
+            }
+
+            #toc-content .is-active-link {
+                color: #42b983;
+            }
+
+            #toc-content .is-active-link::before {
+                background-color: #42b983;
+            }
+
+            #floating-toc-btn {
+                position: fixed;
+                right: 20px;
+                bottom: 76px;
+                padding-top: 15px;
+                margin-bottom: 0;
+                z-index: 998;
+            }
+
+            #floating-toc-btn .btn-floating {
+                width: 48px;
+                height: 48px;
+            }
+
+            #floating-toc-btn .btn-floating i {
+                line-height: 48px;
+                font-size: 1.4rem;
+            }
+        </style>
+        <div class="row">
+            <div id="main-content" class="col s12 m12 l9">
+                <!-- 文章内容详情 -->
+                <div id="artDetail">
+                    <div class="card">
+                        <div class="card-content article-info">
+                            <div class="row tag-cate">
+                                <div class="col s7">
+
+                                    <div class="article-tag">
+
+                                        <a href="#" target="_blank">
+                                            <span class="chip bg-color">收藏</span>
+                                        </a>
+
+                                    </div>
+
+                                </div>
+                                <div class="col s5 right-align">
+
+                                    <div class="post-cate">
+                                        <i class="fa fa-bookmark fa-fw icon-category"></i>
+
+                                        <a href="#" class="post-category" target="_blank">
+                                            收藏
+                                        </a>
+
+                                    </div>
+
+                                </div>
+                            </div>
+
+                            <div class="post-info">
+                                <div class="post-date info-break-policy">
+                                    <i class="fa fa-calendar-minus-o fa-fw"></i>发布日期:&nbsp;&nbsp;
+                                    2020-07-09
+                                </div>
+
+                                <div class="post-author info-break-policy">
+                                    <i class="fa fa-user-o fa-fw"></i>作者:&nbsp;&nbsp;
+
+                                    明轩
+
+                                </div>
+
+
+                                <!-- 
+                                <div class="info-break-policy">
+                                    <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
+                                    22.4k
+                                </div>
+
+
+
+                                <div class="info-break-policy">
+                                    <i class="fa fa-clock-o fa-fw"></i>阅读时长:&nbsp;&nbsp;
+                                    80 分
+                                </div> -->
+
+
+
+
+                                <span id="busuanzi_container_site_pv" style="display:none"></span>
+                                <i class="fa fa-eye fa-fw"></i>阅读次数:&nbsp;&nbsp;
+                                <span id="busuanzi_value_page_pv"></span>
+
+
+
+                            </div>
+                        </div>
+
+
+
+                        <hr class="clearfix">
+                        <div class="card-content article-card-content">
+                            <div id="articleContent">
+                                <!-- 文章主体内容区 -->
+
+                                <h4 id="一、VS Code 扩展"><a href="#一、VS Code 扩展" class="headerlink" title="一、VS Code 扩展"></a>
+                                    一、VS Code 扩展
+                                </h4>
+                                <h5 id="代码提示"><a href="#代码提示" class="headerlink" title="代码提示"></a>
+                                    代码提示
+                                </h5>
+                                <ol>
+                                    <p><a href="https://github.com/abusaidm/html-snippets" target="_blank">HTML
+                                            Snippets</a>&nbsp;HTML 代码提示</p>
+                                    <p><a href="https://github.com/xabikos/vscode-javascript"
+                                            target="_blank">JavaScript (ES6) code snipets</a>&nbsp;JavaScript 代码提示</p>
+                                    <p><a href="https://github.com/greatjiang/h5-code"
+                                            target="_blank">h5-code</a>&nbsp;H5 代码提示</p>
+                                </ol>
+                                <h5 id="Markdown 支持"><a href="#Markdown 支持" class="headerlink" title="Markdown 支持"></a>
+                                    Markdown 支持
+                                </h5>
+                                <ol>
+                                    <p><a href="https://github.com/shd101wyy/vscode-markdown-preview-enhanced"
+                                            target="_blank">Markdown Preview Enhanced</a>&nbsp;Markdown 实时预览，侧边栏展示</p>
+                                </ol>
+                                <h5 id="代码格式化"><a href="#代码格式化" class="headerlink" title="代码格式化"></a>
+                                    代码格式化
+                                </h5>
+
+                                <ol>
+                                    <p><a href="https://github.com/prettier/prettier-vscode" target="_blank">Markdown
+                                            Preview Enhanced</a>&nbsp;Alt + Shift + F 格式化代码</p>
+                                </ol>
+                                <h4 id="二、IDEA扩展"><a href="#二、IDEA扩展" class="headerlink" title="二、IDEA扩展"></a>
+                                    二、IDEA 扩展
+                                </h4>
+                                <h5 id="代码规范"><a href="#代码规范" class="headerlink" title="代码规范"></a>
+                                    代码规范
+                                </h5>
+                                <ol>
+                                    <p><a href="https://plugins.jetbrains.com/plugin/10046-alibaba-java-coding-guidelines"
+                                            target="_blank">Alibaba Java Coding Guidelines</a>&nbsp;阿里巴巴代码违规检测</p>
+                                </ol>
+
+
+                                <h5 id="IDEA主题"><a href="#IDEA主题" class="headerlink" title="IDEA主题"></a>
+                                    IDEA 主题
+                                </h5>
+                                <ol>
+                                    <p><a href="https://plugins.jetbrains.com/plugin/12255-visual-studio-code-dark-plus-theme"
+                                            target="_blank">Visual Studio Code Dark Plus Theme</a>&nbsp;VS Code 暗黑主题</p>
+                                </ol>
+
+                                <h5 id="侧边代码地图"><a href="#侧边代码地图" class="headerlink" title="侧边代码地图"></a>
+                                    侧边代码地图
+                                </h5>
+                                <ol>
+                                    <p><a href="https://plugins.jetbrains.com/plugin/7275-codeglance"
+                                            target="_blank">CodeGlance</a>&nbsp;侧边显示代码小地图以及标识</p>
+                                </ol>
+                                <h5 id="Git相关"><a href="#Git相关" class="headerlink" title="Git相关"></a>
+                                    Git相关
+                                </h5>
+                                <ol>
+                                    <p><a href="https://plugins.jetbrains.com/plugin/10550-add-to-gitignore"
+                                            target="_blank">Add gitignore</a>&nbsp;生成 <code>.gitignore</code> 文件</p>
+                                </ol>
+                                <h4 id="三、Chrome 扩展"><a href="#三、Chrome 扩展" class="headerlink" title="三、Chrome 扩展"></a>
+                                    三、Chrome 扩展
+                                </h4>
+                                <h5 id="以图搜图"><a href="#以图搜图" class="headerlink" title="以图搜图"></a>
+                                    以图搜图
+                                </h5>
+                                <ol>
+                                    <p><a href="https://chrome.google.com/webstore/detail/noobox/kidibbfcblfbbafhnlanccjjdehoahep?utm_source=chrome-ntp-icon"
+                                            target="_blank">Noobox</a>&nbsp;使用图片搜索相关图片</p>
+                                </ol>
+                                <h5 id="二维码对象"><a href="#二维码对象" class="headerlink" title="二维码对象"></a>
+                                    二维码对象
+                                </h5>
+                                <ol>
+                                    <p><a href="https://chrome.google.com/webstore/detail/quick-qr-code-generator/afpbjjgbdimpioenaedcjgkaigggcdpp?utm_source=chrome-ntp-icon"
+                                            target="_blank">Quick QR Code Generator</a>&nbsp;将文本或链接转换为二维码</p>
+                                </ol>
+                                <h5 id="截图"><a href="#截图" class="headerlink" title="截图"></a>
+                                    截图
+                                </h5>
+                                <ol>
+                                    <p><a href="https://chrome.google.com/webstore/detail/take-webpage-screenshots/mcbpblocgmgfnpjjppndjkmgjaogfceg?utm_source=chrome-ntp-icon"
+                                            target="_blank">Take Webpage Screenshots Entirely -
+                                            FireShot</a>&nbsp;截取网页整页长图</p>
+                                </ol>
+                                <h5 id="字幕"><a href="#字幕" class="headerlink" title="字幕"></a>
+                                    字幕
+                                </h5>
+                                <ol>
+                                    <p><a href="https://www.chrome666.com/chrome-extension/youtube_double_captions.html"
+                                            target="_blank">YouTube 双字幕</a>&nbsp;Youtube 双字幕显示</p>
+                                </ol>
+                                <h5 id="翻译"><a href="#翻译" class="headerlink" title="翻译"></a>
+                                    翻译
+                                </h5>
+                                <ol>
+                                    <p><a href="https://chrome.google.com/webstore/detail/%E6%B2%99%E6%8B%89%E6%9F%A5%E8%AF%8D-%E8%81%9A%E5%90%88%E8%AF%8D%E5%85%B8%E5%88%92%E8%AF%8D%E7%BF%BB%E8%AF%91/cdonnmffkdaoajfknoeeecmchibpmkmg?utm_source=chrome-ntp-icon"
+                                            target="_blank">沙拉查词</a>&nbsp;划词翻译，支持有道、谷歌翻译等 API</p>
+                                </ol>
+                                <h5 id="禁止广告"><a href="#禁止广告" class="headerlink" title="禁止广告"></a>
+                                    禁止广告
+                                </h5>
+                                <ol>
+                                    <p><a href="https://chrome.google.com/webstore/detail/adblock-for-youtube/cmedhionkhpnakcndndgjdbohmhepckk?utm_source=chrome-ntp-icon"
+                                            target="_blank">Video Adblocker for Youtube Extension</a>&nbsp;拦截 Youtube 的广告
+                                    </p>
+                                </ol>
+                                <h5 id="脚本"><a href="#脚本" class="headerlink" title="脚本"></a>
+                                    脚本
+                                </h5>
+                                <ol>
+                                    <p><a href="https://chrome.google.com/webstore/detail/tampermonkey/dhdgffkkebhmkfjojejmpbldmpobfkfo?utm_source=chrome-ntp-icon"
+                                            target="_blank">Tampermonkey</a>&nbsp;支持引入执行外部 JavaScript</p>
+                                </ol>
+                                <h5 id="下载"><a href="#下载" class="headerlink" title="下载"></a>
+                                    下载
+                                </h5>
+                                <ol>
+                                    <p><a href="https://chrome.google.com/webstore/detail/fatkun-batch-download-ima/nnjjahlikiabnchcpehcpkdeckfgnohf?utm_source=chrome-ntp-icon"
+                                            target="_blank">Fatkun Batch Download Image</a>&nbsp;网页图片抓取、批量下载</p>
+                                    <p><a href="https://chrome.google.com/webstore/detail/idm-integration-module/ngpampappnmepgilojfohadhhmbhlaek"
+                                            target="_blank">IDM Integration Module</a>&nbsp;配合 IDM 食用</p>
+                                </ol>
+
+
+                            </div>
+                            <hr>
+
+                            <div class="reprint1">
+                                <p>
+                                    <span class="reprint1-tip">
+                                        <i class="fa fa-exclamation-circle"></i>&nbsp;&nbsp;转载请注明:
+                                    </span>
+                                    <a href="../home.html" class="b-link-green">明轩博客</a>
+                                    <i class="fa fa-angle-right fa-lg fa-fw text-color"></i>
+                                    <a href="" class="b-link-green">常用扩展</a>
+                                </p>
+
+
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <article id="prenext-posts" class="prev-next articles">
+                        <div class="row article-row">
+
+                            <div class="article col s12 m6" data-aos="fade-up">
+                                <div class="article-badge left-badge text-color">
+                                    <i class="fa fa-chevron-left"></i>&nbsp;上一篇</div>
+                                <div class="card">
+                                    <a href="#">
+                                        <div class="card-image">
+
+                                            <img src="#" class="responsive-img" alt="Kafka消息中间件">
+
+                                            <span class="card-title">Kafka消息中间件</span>
+                                        </div>
+                                    </a>
+                                    <div class="card-content article-content">
+                                        <div class="summary block-with-text">
+
+                                            Apache Kafka是一个分布式发布-订阅消息系统和一个强大的队列,可以处理大量的数据.
+
+                                        </div>
+                                        <div class="publish-info">
+                                            <span class="publish-date">
+                                                <i class="fa fa-clock-o fa-fw icon-date"></i>2018-11-22
+                                            </span>
+                                            <span class="publish-author">
+
+                                                <i class="fa fa-bookmark fa-fw icon-category"></i>
+
+                                                <a href="#" class="post-category" target="_blank">
+                                                    基础组件
+                                                </a>
+
+
+                                            </span>
+                                        </div>
+                                    </div>
+
+                                    <div class="card-action article-tags">
+
+                                        <a href="#" target="_blank">
+                                            <span class="chip bg-color">中间件</span>
+                                        </a>
+
+                                    </div>
+
+                                </div>
+                            </div>
+
+
+                            <div class="article col s12 m6" data-aos="fade-up">
+                                <div class="article-badge right-badge text-color">
+                                    下一篇&nbsp;<i class="fa fa-chevron-right"></i>
+                                </div>
+                                <div class="card">
+                                    <a href="#">
+                                        <div class="card-image">
+
+                                            <img src="#" class="responsive-img" alt="MapReduce编程模型">
+
+                                            <span class="card-title">MapReduce编程模型</span>
+                                        </div>
+                                    </a>
+                                    <div class="card-content article-content">
+                                        <div class="summary block-with-text">
+
+                                            MapReduce 既是一个编程模型,又是一个计算框架,是一种非常简单又非常强大的编程模型.
+
+                                        </div>
+                                        <div class="publish-info">
+                                            <span class="publish-date">
+                                                <i class="fa fa-clock-o fa-fw icon-date"></i>2018-07-29
+                                            </span>
+                                            <span class="publish-author">
+
+                                                <i class="fa fa-bookmark fa-fw icon-category"></i>
+
+                                                <a href="#" class="post-category" target="_blank">
+                                                    大数据
+                                                </a>
+
+
+                                            </span>
+                                        </div>
+                                    </div>
+
+                                    <div class="card-action article-tags">
+
+                                        <a href="#" target="_blank">
+                                            <span class="chip bg-color">大数据</span>
+                                        </a>
+
+                                    </div>
+
+                                </div>
+                            </div>
+
+                        </div>
+                    </article>
+                </div>
+
+
+                <script>
+                    $('#articleContent').on('copy', function (e) {
+                        // IE8 or earlier browser is 'undefined'
+                        if (typeof window.getSelection === 'undefined') return;
+
+                        var selection = window.getSelection();
+                        // if the selection is short let's not annoy our users.
+                        if (('' + selection).length < Number.parseInt('120')) {
+                            return;
+                        }
+
+                        // create a div outside of the visible area and fill it with the selected text.
+                        var bodyElement = document.getElementsByTagName('body')[0];
+                        var newdiv = document.createElement('div');
+                        newdiv.style.position = 'absolute';
+                        newdiv.style.left = '-99999px';
+                        bodyElement.appendChild(newdiv);
+                        newdiv.appendChild(selection.getRangeAt(0).cloneContents());
+
+
+                        if (selection.getRangeAt(0).commonAncestorContainer.nodeName === 'PRE') {
+                            newdiv.innerHTML = "<pre>" + newdiv.innerHTML + "</pre>";
+                        }
+
+                        var url = document.location.href;
+                        newdiv.innerHTML += '<br />'
+                            + '来源: 明轩博客<br />'
+                            + '作者: 明轩<br />'
+                            + '链接: <a href="' + url + '">' + url + '</a><br />'
+                            + '本文章著作权归作者所有，任何形式的转载都请注明出处。';
+
+                        selection.selectAllChildren(newdiv);
+                        window.setTimeout(function () { bodyElement.removeChild(newdiv); }, 200);
+                    });
+                </script>
+
+
+            </div>
+            <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
+                <div class="toc-widget">
+                    <div class="toc-title"><i class="fa fa-list-alt"></i>&nbsp;&nbsp;目录</div>
+                    <div id="toc-content"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- TOC 悬浮按钮. -->
+
+        <div id="floating-toc-btn" class="hide-on-med-and-down">
+            <a class="btn-floating btn-large bg-color">
+                <i class="fa fa-list"></i>
+            </a>
+        </div>
+
+
+        <script src="../libs/tocbot/tocbot.min.js"></script>
+        <script>
+            $(function () {
+                tocbot.init({
+                    tocSelector: '#toc-content',
+                    contentSelector: '#articleContent',
+                    headingsOffset: -($(window).height() * 0.4 - 45),
+                    // headingsOffset: -205,
+                    headingSelector: 'h1, h2, h3, h4, h5'
+                });
+
+                // modify the toc link href to support Chinese.
+                let i = 0;
+                let tocHeading = 'toc-heading-';
+                $('#toc-content a').each(function () {
+                    $(this).attr('href', '#' + tocHeading + (++i));
+                });
+
+                // modify the heading title id to support Chinese.
+                i = 0;
+                $('#articleContent').children('h1, h2, h3, h4, h5').each(function () {
+                    $(this).attr('id', tocHeading + (++i));
+                });
+
+                // Set scroll toc fixed.
+                let tocHeight = parseInt($(window).height() * 0.4 - 64);
+                let $tocWidget = $('.toc-widget');
+                $(window).scroll(function () {
+                    let scroll = $(window).scrollTop();
+                    /* add post toc fixed. */
+                    if (scroll > tocHeight) {
+                        $tocWidget.addClass('toc-fixed');
+                    } else {
+                        $tocWidget.removeClass('toc-fixed');
+                    }
+                });
+
+
+                /* 修复文章卡片 div 的宽度. */
+                let fixPostCardWidth = function (srcId, targetId) {
+                    let srcDiv = $('#' + srcId);
+                    if (srcDiv.length === 0) {
+                        return;
+                    }
+
+                    let w = srcDiv.width();
+                    if (w >= 450) {
+                        w = w + 21;
+                    } else if (w >= 350 && w < 450) {
+                        w = w + 18;
+                    } else if (w >= 300 && w < 350) {
+                        w = w + 16;
+                    } else {
+                        w = w + 14;
+                    }
+                    $('#' + targetId).width(w);
+                };
+
+                // 切换TOC目录展开收缩的相关操作.
+                const expandedClass = 'expanded';
+                let $tocAside = $('#toc-aside');
+                let $mainContent = $('#main-content');
+                $('#floating-toc-btn .btn-floating').click(function () {
+                    if ($tocAside.hasClass(expandedClass)) {
+                        $tocAside.removeClass(expandedClass).slideUp(500);
+                        $mainContent.removeClass('l9');
+                    } else {
+                        $tocAside.addClass(expandedClass).slideDown(500);
+                        $mainContent.addClass('l9');
+                    }
+                    fixPostCardWidth('artDetail', 'prenext-posts');
+                });
+
+            });
+        </script>
+
+
+    </main>
+
+
+    <footer class="page-footer bg-color">
+        <div class="container row center-align">
+            <div class="col s12 m8 l8 copy-right">
+                Copyright&copy; 2018-2020 mingxuanblog.cn
+
+                <br>
+                <!-- <span id="sitetime"></span><span class="my-face">ღゝ◡╹)ノ♡</span>
+                <br> -->
+
+                <span> 赣ICP备19007380号</span>
+
+                <br>
+
+
+
+
+
+                <span id="busuanzi_container_site_pv" style="display:none"></span>
+                总访问量: <span id="busuanzi_value_site_pv" class="white-color"></span>
+
+
+
+                <span id="busuanzi_container_site_uv" style="display:none"></span>
+                人次&nbsp; | &nbsp;访客人数: <span id="busuanzi_value_site_uv" class="white-color"></span> 人
+
+                <br>
+
+            </div>
+
+            <div class="col s12 m4 l4 social-link social-statis">
+                <a href="#" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top"
+                    data-delay="50">
+                    <i class="fa fa-github"></i>
+                </a>
+
+
+
+                <a href="#" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
+                    <i class="fa fa-envelope-open"></i>
+                </a>
+
+
+
+
+
+
+                <a href="#" class="tooltipped" target="_blank" data-tooltip="访问我的QQ空间" data-position="top"
+                    data-delay="50">
+                    <i class="fa fa-qq"></i>
+                </a>
+
+
+
+
+
+                <a href="#" class="tooltipped" target="_blank" data-tooltip="RSS 订阅" data-position="top"
+                    data-delay="50">
+                    <i class="fa fa-rss"></i>
+                </a>
+            </div>
+
+        </div>
+    </footer>
+
+    <div class="progress-bar"></div>
+
+
+
+
+
+
+
+
+    <!-- 回到顶部按钮 -->
+    <div id="backTop" class="top-scroll">
+        <a class="btn-floating btn-large waves-effect waves-light" href="#!">
+            <i class="fa fa-angle-up"></i>
+        </a>
+    </div>
+
+
+    <script src="../libs/materialize/materialize.min.js"></script>
+    <script src="../libs/masonry/masonry.pkgd.min.js"></script>
+    <script src="../libs/aos/aos.js"></script>
+    <script src="../libs/scrollprogress/scrollProgress.min.js"></script>
+    <script src="../libs/lightGallery/js/lightgallery-all.min.js"></script>
+    <script src="../js/matery.js"></script>
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+
+
+
+
+    <script src="../libs/others/clicklove.js"></script>
+
+
+
+    <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+    <!-- 代码高亮 -->
+    <script>
+        hljs.initHighlightingOnLoad();
+    </script>
+
+
+    <!-- 鼠标点击烟花爆炸效果 -->
+
+
+    <!-- 背景雪花飘落特效 -->
+
+
+    <!-- 鼠标点击文字特效 -->
+
+
+    <!-- 背景雪花飘落特效 -->
+
+
+
+    <!-- 背景动态彩带 -->
+
+
+    <script type="text/javascript">
+        var windowWidth = $(window).width();
+        if (windowWidth > 992) {
+            document.write('<script type="text/javascript" src="../libs/background/ribbon-dynamic.js"><\/script>');
+        }
+    </script>
+
+
+
+
+</body>
+
+</html>

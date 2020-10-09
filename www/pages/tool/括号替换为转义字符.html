@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Html标签转义</title>
+    <style>
+        body {
+            font-family: BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+        }
+
+        .text {
+            position: absolute;
+            margin: 0 15%;
+            width: 70%;
+            height: 70%;
+            font-size: 16px;
+        }
+
+        .button {
+            display: block;
+            position: absolute;
+            top: 80%;
+            width: 72px;
+            height: 36px;
+            margin-left: 50%;
+            left: -36px;
+
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 自动获取光标 关闭语法检查 -->
+    <textarea id="textArea" class="text"  placeholder="将'<'和'>'替换为转义字符" autofocus spellcheck="false"></textarea>
+    <button class="button">转换</button>
+
+</body>
+<script type="text/javascript">
+    var btn = document.getElementsByClassName("button");
+    var area = document.getElementById("textArea");
+
+    btn[0].onclick = function () {
+        // 获取文本域内容
+        // console.log(area.value);
+
+        // 分步正则表达式替换
+        var oldChar = area.value;
+        var newChar1 = oldChar.replace(/</g, "&lt;");
+        var newChar2 = newChar1.replace(/>/g, "&gt;");
+
+        area.value = newChar2;
+        // console.log(newChar2);
+    }
+</script>
+
+</html>

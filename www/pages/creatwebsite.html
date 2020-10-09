@@ -1,0 +1,1245 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+
+
+
+
+<head>
+    <meta name="generator" content="Hexo 3.8.0">
+    <meta charset="utf-8">
+    <meta name="keywords" content="搭建Nginx静态网站">
+    <meta name="baidu-site-verification" content="fmlEuI34ir">
+    <meta name="google-site-verification" content="KeoTn_OFy4ndJwXNmm2gMeQfPhd7alqE9vQDwI32KCY">
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="renderer" content="webkit|ie-stand|ie-comp">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <title>搭建Nginx静态网站</title>
+    <link rel="icon" href="../favicon.ico">
+
+
+    <link rel="stylesheet" type="text/css" href="https://cdn.staticfile.org/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="../libs/materialize/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="../libs/aos/aos.css">
+    <link rel="stylesheet" type="text/css" href="../libs/animate/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="../libs/lightGallery/css/lightgallery.min.css">
+    <link rel="stylesheet" type="text/css" href="../css/matery.css">
+    <link rel="stylesheet" type="text/css" href="../css/my.css">
+
+    <script src="https://cdn.staticfile.org/jquery/2.2.0/jquery.min.js"></script>
+    <script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
+
+    <!-- 代码块渲染 -->
+    <link rel="stylesheet" href="../css/prism-tomorrow.css" type="text/css">
+</head>
+
+<body>
+
+    <header class="navbar-fixed">
+        <nav id="headNav" class="bg-color nav-transparent">
+            <div id="navContainer" class="nav-wrapper container">
+                <div class="brand-logo">
+                    <a href="#" class="waves-effect waves-light">
+                        <img src="../images/logo.png" class="logo-img" alt="LOGO">
+                        <span class="logo-span">Hi 明轩</span>
+                    </a>
+                </div>
+
+
+                <a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i
+                        class="fa fa-navicon"></i></a>
+                <ul class="right nav-menu">
+                    <li class="hide-on-med-and-down nav-item">
+                        <a href="#" class="waves-effect waves-light">
+                            <i class="fa fa-home"></i>
+                            <span>首页</span>
+                        </a>
+                    </li>
+
+                    <li class="hide-on-med-and-down nav-item">
+                        <a href="./bookmarks.html" class="waves-effect waves-light">
+                            <i class="fa fa-tags"></i>
+                            <span>书签</span>
+                        </a>
+                    </li>
+
+                    <li class="hide-on-med-and-down nav-item">
+                        <a href="#" class="waves-effect waves-light">
+                            <i class="fa fa-bookmark"></i>
+                            <span>笔记</span>
+                        </a>
+                    </li>
+
+                    <li class="hide-on-med-and-down nav-item">
+                        <a href="#" class="waves-effect waves-light">
+                            <i class="fa fa-archive"></i>
+                            <span>宝箱</span>
+                        </a>
+                    </li>
+
+                    <li class="hide-on-med-and-down nav-item">
+                        <a href="#" class="waves-effect waves-light">
+                            <i class="fa fa-user-circle-o"></i>
+                            <span>关于</span>
+                        </a>
+                    </li>
+                </ul>
+
+                <div id="mobile-nav" class="side-nav sidenav">
+                    <div class="mobile-head bg-color">
+                        <img src="../images/logo.png" class="logo-img circle responsive-img">
+                        <div class="logo-name">明轩博客</div>
+                        <div class="logo-desc">
+                            技术指北大全
+                        </div>
+                    </div>
+
+                    <ul class="menu-list mobile-menu-list">
+                        <li>
+                            <a href="#" class="waves-effect waves-light">
+                                <i class="fa fa-fw fa-home"></i>
+                                首页
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="#" class="waves-effect waves-light">
+                                <i class="fa fa-fw fa-tags"></i>
+                                书签
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="#" class="waves-effect waves-light">
+                                <i class="fa fa-fw fa-bookmark"></i>
+                                笔记
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="#" class="waves-effect waves-light">
+                                <i class="fa fa-fw fa-archive"></i>
+                                宝箱
+                            </a>
+                        </li>
+
+
+                        <li>
+                            <a href="./aboutme.html" class="waves-effect waves-light">
+                                <i class="fa fa-fw fa-user-circle-o"></i>
+                                关于
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+
+            <style>
+                .nav-transparent .github-corner {
+                    display: none !important;
+                }
+
+                .github-corner {
+                    position: absolute;
+                    z-index: 10;
+                    top: 0;
+                    right: 0;
+                    border: 0;
+                    transform: scale(1.1);
+                }
+
+                .github-corner svg {
+                    color: #0f9d58;
+                    fill: #fff;
+                    height: 64px;
+                    width: 64px;
+                }
+
+                .github-corner:hover .octo-arm {
+                    animation: a 0.56s ease-in-out;
+                }
+
+                .github-corner .octo-arm {
+                    animation: none;
+                }
+
+                @keyframes a {
+
+                    0%,
+                    to {
+                        transform: rotate(0);
+                    }
+
+                    20%,
+                    60% {
+                        transform: rotate(-25deg);
+                    }
+
+                    40%,
+                    80% {
+                        transform: rotate(10deg);
+                    }
+                }
+            </style>
+
+        </nav>
+
+    </header>
+
+
+
+
+
+    <div class="bg-cover pd-header post-cover" style="background-image: url('../images/pages/ocean.jpg')">
+        <div class="container">
+            <div class="row">
+                <div class="col s12 m12 l12">
+                    <div class="brand">
+                        <div class="description center-align post-title">
+                            搭建Nginx静态网站
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <main class="post-container content">
+
+
+        <link rel="stylesheet" href="../libs/tocbot/tocbot.css">
+        <style>
+            #articleContent h1::before,
+            #articleContent h2::before,
+            #articleContent h3::before,
+            #articleContent h4::before,
+            #articleContent h5::before,
+            #articleContent h6::before {
+                display: block;
+                content: " ";
+                height: 100px;
+                margin-top: -100px;
+                visibility: hidden;
+            }
+
+            #articleContent :focus {
+                outline: none;
+            }
+
+            .toc-fixed {
+                position: fixed;
+                top: 64px;
+            }
+
+            .toc-widget {
+                padding-left: 20px;
+            }
+
+            .toc-widget .toc-title {
+                margin: 35px 0 15px 0;
+                padding-left: 17px;
+                font-size: 1.5rem;
+                font-weight: bold;
+                line-height: 1.5rem;
+            }
+
+            .toc-widget ol {
+                padding: 0;
+                list-style: none;
+            }
+
+            #toc-content ol {
+                padding-left: 10px;
+            }
+
+            #toc-content ol li {
+                padding-left: 10px;
+            }
+
+            #toc-content .toc-link:hover {
+                color: #42b983;
+                font-weight: 700;
+                text-decoration: underline;
+            }
+
+            #toc-content .toc-link::before {
+                background-color: transparent;
+                max-height: 25px;
+            }
+
+            #toc-content .is-active-link {
+                color: #42b983;
+            }
+
+            #toc-content .is-active-link::before {
+                background-color: #42b983;
+            }
+
+            #floating-toc-btn {
+                position: fixed;
+                right: 20px;
+                bottom: 76px;
+                padding-top: 15px;
+                margin-bottom: 0;
+                z-index: 998;
+            }
+
+            #floating-toc-btn .btn-floating {
+                width: 48px;
+                height: 48px;
+            }
+
+            #floating-toc-btn .btn-floating i {
+                line-height: 48px;
+                font-size: 1.4rem;
+            }
+        </style>
+        <div class="row">
+            <div id="main-content" class="col s12 m12 l9">
+                <!-- 文章内容详情 -->
+                <div id="artDetail">
+                    <div class="card">
+                        <div class="card-content article-info">
+                            <div class="row tag-cate">
+                                <div class="col s7">
+
+                                    <div class="article-tag">
+
+                                        <a href="#" target="_blank">
+                                            <span class="chip bg-color">Nginx</span>
+                                        </a>
+
+                                    </div>
+
+                                </div>
+                                <div class="col s5 right-align">
+
+                                    <div class="post-cate">
+                                        <i class="fa fa-bookmark fa-fw icon-category"></i>
+
+                                        <a href="#" class="post-category" target="_blank">
+                                            Nginx
+                                        </a>
+
+                                    </div>
+
+                                </div>
+                            </div>
+
+                            <div class="post-info">
+                                <div class="post-date info-break-policy">
+                                    <i class="fa fa-calendar-minus-o fa-fw"></i>发布日期:&nbsp;&nbsp;
+                                    2019-07-28
+                                </div>
+
+                                <div class="post-author info-break-policy">
+                                    <i class="fa fa-user-o fa-fw"></i>作者:&nbsp;&nbsp;
+
+                                    明轩
+
+                                </div>
+
+
+<!-- 
+                                <div class="info-break-policy">
+                                    <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
+                                    22.4k
+                                </div>
+
+
+
+                                <div class="info-break-policy">
+                                    <i class="fa fa-clock-o fa-fw"></i>阅读时长:&nbsp;&nbsp;
+                                    80 分
+                                </div> -->
+
+
+
+
+                                <span id="busuanzi_container_site_pv" style="display:none"></span>
+                                <i class="fa fa-eye fa-fw"></i>阅读次数:&nbsp;&nbsp;
+                                <span id="busuanzi_value_page_pv"></span>
+
+
+
+                            </div>
+                        </div>
+                        <hr class="clearfix">
+                        <div class="card-content article-card-content">
+                            <div id="articleContent">
+                                <!-- 文章主体内容区 -->
+
+                                <h4 id="一、准备阶段"><a href="#一、准备阶段" class="headerlink" title="一、准备阶段"></a>一、准备阶段</h4>
+                                <ul>
+                                    <li>服务器，本文中使用的服务器为腾讯云服务器</li>
+                                    <li>SLL证书，本文使用DVSLL证书</li>
+                                    <li>Linux系统镜像Centos 7.6 </li>
+                                </ul>
+
+
+                                <h4 id="二、域名的准备与解析"><a href="#二、域名的准备与解析" class="headerlink"
+                                        title="二、域名的准备与解析"></a>二、域名的准备与解析</h4>
+                                <ol>
+                                    <p>1.在云控制台实例中添加解析记录</p>
+                                    <p>2.使用ping命令验证是否解析成功</p>
+                                    <p>3.在终端设备键入ping www.yourdomain.com如果返回显示你的域名则表明解析成功</p>
+                                </ol>
+                                <p>注：www.yourdomain.com为你所申请的域名，域名的申请周期较长可早做准备。</p>
+
+
+                                <h4 id="三、安装Web服务"><a href="#三、安装Web服务" class="headerlink"
+                                        title="三、安装Web服务"></a>三、安装Web服务</h4>
+                                <p>使用MobaXterm等软件采用SSH连接的方式远程登入服务器</p>
+                                <ol>
+                                    <li>
+                                        <p>使用<code>yum</code>命令安装nginx</p>
+                                    </li>
+                                    <pre><code>[root@VM_0_9_centos ~]# yum install -y nginx</code></pre>
+
+                                    <li>
+                                        <p>启动nginx</p>
+                                    </li>
+                                    <pre><code>[root@VM_0_9_centos ~]# nginx</code></pre>
+
+                                    <li>
+                                        <p>检查nginx是否安装成功，在浏览器输入你的域名出现nginx的测试界面则表明安装成功</p>
+                                    </li>
+
+                                    <li>
+                                        <p>设置nginx开机自启</p>
+                                    </li>
+                                    <pre><code>[root@VM_0_9_centos ~]# systemctl enable nginx.service</code></pre>
+                                </ol>
+
+
+
+                                <h4 id="四、配置SSL证书"><a href="#四、配置SSL证书" class="headerlink"
+                                        title="四、配置SSL证书"></a>四、配置SSL证书</h4>
+                                <h5 id="(1)、申请SSL证书"><a href="#(1)、申请SSL证书" class="headerlink"
+                                        title="(1)、申请SSL证书"></a>(1)、申请SSL证书</h5>
+                                <ol>
+                                    <p>申请过程中需要通过DNS验证，可选择解析验证或文件验证，解析验证需要在解析记录中加入一条指定值的TXT类型的解析记录。</p>
+                                </ol>
+
+                                <h5 id="(2)、上传安全证书和密钥文件"><a href="#(2)、上传安全证书和密钥文件" class="headerlink"
+                                        title="(2)、上传安全证书和密钥文件"></a>(2)、上传安全证书和密钥文件
+                                </h5>
+                                <ol>
+                                    <p>DNS验证通过后，在SSL证书管理处下载文件，在解压后的文件夹中找到nginx文件夹，将其中的密钥文件使用WinSCP等文件传输软件上传到服务器的etc/nginx目录下。
+                                    </p>
+                                </ol>
+
+                                <h5 id="(3)、更改nginx的配置文件"><a href="#(3)、更改nginx的配置文件" class="headerlink"
+                                        title="(3)、更改nginx的配置文件"></a>(3)、更改nginx的配置文件</h5>
+                                <ol>
+                                    <p>路径为/etc/nginx/nginx.conf</p>
+                                    <pre><code># HTTPS   ~   server
+server {
+listen 443     ssl http2 default_server;
+listen     [::]:443 ssl http2 default_server;
+#更改为你申请的域名
+server_name www.yourdomain.com;
+#更改为你的站点根目录 
+root     /date/www;
+
+#分别更改为你的证书和密钥的路径
+ssl_certificate "/etc/nginx/1_www.yourdomain.com_bundle.crt";
+ssl_certificate_key "/etc/nginx/2_www.yourdomain.com.key";
+ssl_session_cache   shared:SSL:1m;
+ssl_session_timeout   10m;
+#请按照这个套件配置,配置加密套件,写法遵循 openssl 标准
+ssl_ciphers ECDHE-RSA-AES128-GCM-SHA256:HIGH:!aNULL:!MD5:!RC4:!DHE;
+ssl_prefer_server_ciphers on;</code></pre>
+                                </ol>
+                                <h5 id="(4)、nginx重定向"><a href="#(4)、nginx重定向" class="headerlink"
+                                        title="(4)、nginx重定向"></a>(4)、nginx重定向</h5>
+                                <ol>
+                                    <p>nginx支持重定向功能,可以在nginx配置文件的80端口server块添加下行代码已实现HTTP自动跳转HTTPS的安全配置</p>
+                                    <pre><code>rewrite ^(.*)$ https://$host$1 permanent;</code></pre>
+                                </ol>
+
+                                <h4 id="五、检查与验证"><a href="#五、检查与验证" class="headerlink" title="五、检查与验证"></a>五、检查与验证</h4>
+                                <ol>
+                                    <li><p>检查nginx配置文件是否生效，输入命令</p></li>
+                                    <pre><code>[root@VM_0_9_centos ~]# nginx -t</code></pre>
+                                    <li><p>若配置文件无误，返回显示如下信息。如显示失败请检查文件的配置设置与语法</p></li>
+                                    <pre><code>nginx: the configuration file /etc/nginx/nginx.conf syntax is ok
+nginx: configuration file /etc/nginx/nginx.conf test is successful</code></pre>
+
+                                    <li><p>重启nginx服务</p></li>
+                                    <pre><code>[root@VM_0_9_centos ~]# nginx -s reload</code></pre>
+                                    <li><p>使用https协议访问你的域名，如https://www.yourdomain.com检查是否成功,如果地址栏出现锁头标志,说明SSL配置已成功</p></li>
+                                </ol>
+                            </div>
+                            <hr>
+
+
+                            <style>
+                                #reward {
+                                    margin: 40px 0;
+                                    text-align: center;
+                                }
+
+                                #reward .reward-link {
+                                    font-size: 1.88rem;
+                                }
+
+                                #reward .btn-floating:hover {
+                                    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2), 0 5px 15px rgba(0, 0, 0, 0.2);
+                                }
+
+                                #rewardModal {
+                                    width: 320px;
+                                    height: 350px;
+                                }
+
+                                #rewardModal .reward-title {
+                                    margin: 15px auto;
+                                    padding-bottom: 5px;
+                                }
+
+                                #rewardModal .modal-content {
+                                    padding: 10px;
+                                }
+
+                                #rewardModal .close {
+                                    position: absolute;
+                                    right: 15px;
+                                    top: 15px;
+                                    color: rgba(0, 0, 0, 0.5);
+                                    font-size: 1.3rem;
+                                    line-height: 20px;
+                                    cursor: pointer;
+                                }
+
+                                #rewardModal .close:hover {
+                                    color: #ef5350;
+                                    transform: scale(1.3);
+                                    -moz-transform: scale(1.3);
+                                    -webkit-transform: scale(1.3);
+                                    -o-transform: scale(1.3);
+                                }
+
+                                #rewardModal .reward-tabs {
+                                    margin: 0 auto;
+                                    width: 210px;
+                                }
+
+                                .reward-tabs .tabs {
+                                    height: 38px;
+                                    margin: 10px auto;
+                                    padding-left: 0;
+                                }
+
+                                .reward-content ul {
+                                    padding-left: 0 !important;
+                                }
+
+                                .reward-tabs .tabs .tab {
+                                    height: 38px;
+                                    line-height: 38px;
+                                }
+
+                                .reward-tabs .tab a {
+                                    color: #fff;
+                                    background-color: #ccc;
+                                }
+
+                                .reward-tabs .tab a:hover {
+                                    background-color: #ccc;
+                                    color: #fff;
+                                }
+
+                                .reward-tabs .wechat-tab .active {
+                                    color: #fff !important;
+                                    background-color: #22AB38 !important;
+                                }
+
+                                .reward-tabs .alipay-tab .active {
+                                    color: #fff !important;
+                                    background-color: #019FE8 !important;
+                                }
+
+                                .reward-tabs .reward-img {
+                                    width: 210px;
+                                    height: 210px;
+                                }
+                            </style>
+
+
+
+                            <div class="reprint1">
+                                <p>
+                                    <span class="reprint1-tip">
+                                        <i class="fa fa-exclamation-circle"></i>&nbsp;&nbsp;转载请注明:
+                                    </span>
+                                    <a href="../home.html" class="b-link-green">明轩博客</a>
+                                    <i class="fa fa-angle-right fa-lg fa-fw text-color"></i>
+                                    <a href="" class="b-link-green">搭建Nginx静态网站</a>
+                                </p>
+                                <p>
+                                    <span>参考链接：https://cloud.tencent.com/developer/labs/lab/10003</span>
+                                </p>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <!-- <style>
+                        .valine-card {
+                            margin: 1.5rem auto;
+                        }
+
+                        .valine-card .card-content {
+                            padding: 20px 20px 5px 20px;
+                        }
+
+                        /* valine 评论框增加背景图片 */
+                        #vcomments textarea {
+                            box-sizing: border-box;
+                            background: url("") 100% 100% no-repeat;
+                        }
+
+                        #vcomments input[type=text],
+                        #vcomments input[type=email],
+                        #vcomments input[type=url],
+                        #vcomments textarea {
+                            box-sizing: border-box;
+                        }
+
+                        #vcomments p {
+                            margin: 2px 2px 10px;
+                            font-size: 1.05rem;
+                            line-height: 1.78rem;
+                        }
+
+                        #vcomments blockquote p {
+                            text-indent: 0.2rem;
+                        }
+
+                        #vcomments a {
+                            padding: 0 2px;
+                            color: #42b983;
+                            font-weight: 500;
+                            text-decoration: underline;
+                        }
+
+                        #vcomments img {
+                            max-width: 100%;
+                            height: auto;
+                            cursor: pointer;
+                        }
+
+                        #vcomments ol li {
+                            list-style-type: decimal;
+                        }
+
+                        #vcomments ol,
+                        ul {
+                            display: block;
+                            padding-left: 2em;
+                            word-spacing: 0.05rem;
+                        }
+
+                        #vcomments ul li,
+                        ol li {
+                            display: list-item;
+                            line-height: 1.8rem;
+                            font-size: 1rem;
+                        }
+
+                        #vcomments ul li {
+                            list-style-type: disc;
+                        }
+
+                        #vcomments ul ul li {
+                            list-style-type: circle;
+                        }
+
+                        #vcomments table,
+                        th,
+                        td {
+                            padding: 12px 13px;
+                            border: 1px solid #dfe2e5;
+                        }
+
+                        #vcomments table,
+                        th,
+                        td {
+                            border: 0;
+                        }
+
+                        table tr:nth-child(2n),
+                        thead {
+                            background-color: #fafafa;
+                        }
+
+                        #vcomments table th {
+                            background-color: #f2f2f2;
+                            min-width: 80px;
+                        }
+
+                        #vcomments table td {
+                            min-width: 80px;
+                        }
+
+                        #vcomments h1 {
+                            font-size: 1.85rem;
+                            font-weight: bold;
+                            line-height: 2.2rem;
+                        }
+
+                        #vcomments h2 {
+                            font-size: 1.65rem;
+                            font-weight: bold;
+                            line-height: 1.9rem;
+                        }
+
+                        #vcomments h3 {
+                            font-size: 1.45rem;
+                            font-weight: bold;
+                            line-height: 1.7rem;
+                        }
+
+                        #vcomments h4 {
+                            font-size: 1.25rem;
+                            font-weight: bold;
+                            line-height: 1.5rem;
+                        }
+
+                        #vcomments h5 {
+                            font-size: 1.1rem;
+                            font-weight: bold;
+                            line-height: 1.4rem;
+                        }
+
+                        #vcomments h6 {
+                            font-size: 1rem;
+                            line-height: 1.3rem;
+                        }
+
+                        #vcomments p {
+                            font-size: 1rem;
+                            line-height: 1.5rem;
+                        }
+
+                        #vcomments hr {
+                            margin: 12px 0;
+                            border: 0;
+                            border-top: 1px solid #ccc;
+                        }
+
+                        #vcomments blockquote {
+                            margin: 15px 0;
+                            border-left: 5px solid #42b983;
+                            padding: 1rem 0.8rem 0.3rem 0.8rem;
+                            color: #666;
+                            background-color: rgba(66, 185, 131, .1);
+                        }
+
+                        #vcomments pre {
+                            font-family: monospace, monospace;
+                            padding: 1.2em;
+                            margin: .5em 0;
+                            background: #272822;
+                            overflow: auto;
+                            border-radius: 0.3em;
+                            tab-size: 4;
+                        }
+
+                        #vcomments code {
+                            font-family: monospace, monospace;
+                            padding: 1px 3px;
+                            font-size: 0.92rem;
+                            color: #e96900;
+                            background-color: #f8f8f8;
+                            border-radius: 2px;
+                        }
+
+                        #vcomments pre code {
+                            font-family: monospace, monospace;
+                            padding: 0;
+                            color: #e8eaf6;
+                            background-color: #272822;
+                        }
+
+                        #vcomments pre[class*="language-"] {
+                            padding: 1.2em;
+                            margin: .5em 0;
+                        }
+
+                        #vcomments code[class*="language-"],
+                        pre[class*="language-"] {
+                            color: #e8eaf6;
+                        }
+
+                        #vcomments [type="checkbox"]:not(:checked),
+                        [type="checkbox"]:checked {
+                            position: inherit;
+                            margin-left: -1.3rem;
+                            margin-right: 0.4rem;
+                            margin-top: -1px;
+                            vertical-align: middle;
+                            left: unset;
+                            visibility: visible;
+                        }
+
+                        #vcomments b,
+                        strong {
+                            font-weight: bold;
+                        }
+
+                        #vcomments dfn {
+                            font-style: italic;
+                        }
+
+                        #vcomments small {
+                            font-size: 85%;
+                        }
+
+                        #vcomments cite {
+                            font-style: normal;
+                        }
+
+                        #vcomments mark {
+                            background-color: #fcf8e3;
+                            padding: .2em;
+                        }
+
+                        #vcomments table,
+                        th,
+                        td {
+                            padding: 12px 13px;
+                            border: 1px solid #dfe2e5;
+                        }
+
+                        table tr:nth-child(2n),
+                        thead {
+                            background-color: #fafafa;
+                        }
+
+                        #vcomments table th {
+                            background-color: #f2f2f2;
+                            min-width: 80px;
+                        }
+
+                        #vcomments table td {
+                            min-width: 80px;
+                        }
+
+                        #vcomments [type="checkbox"]:not(:checked),
+                        [type="checkbox"]:checked {
+                            position: inherit;
+                            margin-left: -1.3rem;
+                            margin-right: 0.4rem;
+                            margin-top: -1px;
+                            vertical-align: middle;
+                            left: unset;
+                            visibility: visible;
+                        }
+
+                        /* 修复评论第一行位置错位 */
+                        .v .vlist .vcard {
+                            padding-top: 2.5em !important;
+                        }
+                    </style>
+
+                    <div class="card valine-card" data-aos="fade-up">
+                        <div id="vcomments" class="card-content"></div>
+                    </div>
+
+                    <script src="/libs/valine/av-min.js"></script>
+                    <script src="/libs/valine/Valine.min.js"></script>
+                    <script>
+                        new Valine({
+                            el: '#vcomments',
+                            appId: 'sEivhtbcORSdLImEVeyeRuYq-gzGzoHsz',
+                            appKey: 'YDXvnpTcya3IeYf4o8fmOrzf',
+                            notify: 'true' === 'true',
+                            verify: 'true' === 'true',
+                            visitor: 'true' === 'true',
+                            avatar: 'monsterid',
+                            pageSize: '10',
+                            lang: 'zh-cn',
+                            placeholder: 'just go go',
+
+                        });
+
+                    </script> -->
+
+
+
+
+                    <article id="prenext-posts" class="prev-next articles">
+                        <div class="row article-row">
+
+                            <div class="article col s12 m6" data-aos="fade-up">
+                                <div class="article-badge left-badge text-color">
+                                    <i class="fa fa-chevron-left"></i>&nbsp;上一篇</div>
+                                <div class="card">
+                                    <a href="#">
+                                        <div class="card-image">
+
+                                            <img src="#" class="responsive-img" alt="Kafka消息中间件">
+
+                                            <span class="card-title">Kafka消息中间件</span>
+                                        </div>
+                                    </a>
+                                    <div class="card-content article-content">
+                                        <div class="summary block-with-text">
+
+                                            Apache Kafka是一个分布式发布-订阅消息系统和一个强大的队列,可以处理大量的数据.
+
+                                        </div>
+                                        <div class="publish-info">
+                                            <span class="publish-date">
+                                                <i class="fa fa-clock-o fa-fw icon-date"></i>2018-11-22
+                                            </span>
+                                            <span class="publish-author">
+
+                                                <i class="fa fa-bookmark fa-fw icon-category"></i>
+
+                                                <a href="#" class="post-category" target="_blank">
+                                                    基础组件
+                                                </a>
+
+
+                                            </span>
+                                        </div>
+                                    </div>
+
+                                    <div class="card-action article-tags">
+
+                                        <a href="#" target="_blank">
+                                            <span class="chip bg-color">中间件</span>
+                                        </a>
+
+                                    </div>
+
+                                </div>
+                            </div>
+
+
+                            <div class="article col s12 m6" data-aos="fade-up">
+                                <div class="article-badge right-badge text-color">
+                                    下一篇&nbsp;<i class="fa fa-chevron-right"></i>
+                                </div>
+                                <div class="card">
+                                    <a href="#">
+                                        <div class="card-image">
+
+                                            <img src="#" class="responsive-img" alt="MapReduce编程模型">
+
+                                            <span class="card-title">MapReduce编程模型</span>
+                                        </div>
+                                    </a>
+                                    <div class="card-content article-content">
+                                        <div class="summary block-with-text">
+
+                                            MapReduce 既是一个编程模型,又是一个计算框架,是一种非常简单又非常强大的编程模型.
+
+                                        </div>
+                                        <div class="publish-info">
+                                            <span class="publish-date">
+                                                <i class="fa fa-clock-o fa-fw icon-date"></i>2018-07-29
+                                            </span>
+                                            <span class="publish-author">
+
+                                                <i class="fa fa-bookmark fa-fw icon-category"></i>
+
+                                                <a href="#" class="post-category" target="_blank">
+                                                    大数据
+                                                </a>
+
+
+                                            </span>
+                                        </div>
+                                    </div>
+
+                                    <div class="card-action article-tags">
+
+                                        <a href="#" target="_blank">
+                                            <span class="chip bg-color">大数据</span>
+                                        </a>
+
+                                    </div>
+
+                                </div>
+                            </div>
+
+                        </div>
+                    </article>
+                </div>
+
+
+                <script>
+                    $('#articleContent').on('copy', function (e) {
+                        // IE8 or earlier browser is 'undefined'
+                        if (typeof window.getSelection === 'undefined') return;
+
+                        var selection = window.getSelection();
+                        // if the selection is short let's not annoy our users.
+                        if (('' + selection).length < Number.parseInt('120')) {
+                            return;
+                        }
+
+                        // create a div outside of the visible area and fill it with the selected text.
+                        var bodyElement = document.getElementsByTagName('body')[0];
+                        var newdiv = document.createElement('div');
+                        newdiv.style.position = 'absolute';
+                        newdiv.style.left = '-99999px';
+                        bodyElement.appendChild(newdiv);
+                        newdiv.appendChild(selection.getRangeAt(0).cloneContents());
+
+
+                        if (selection.getRangeAt(0).commonAncestorContainer.nodeName === 'PRE') {
+                            newdiv.innerHTML = "<pre>" + newdiv.innerHTML + "</pre>";
+                        }
+
+                        var url = document.location.href;
+                        newdiv.innerHTML += '<br />'
+                            + '来源: 明轩博客<br />'
+                            + '作者: 高虎<br />'
+                            + '链接: <a href="' + url + '">' + url + '</a><br />'
+                            + '本文章著作权归作者所有，任何形式的转载都请注明出处。';
+
+                        selection.selectAllChildren(newdiv);
+                        window.setTimeout(function () { bodyElement.removeChild(newdiv); }, 200);
+                    });
+                </script>
+
+
+            </div>
+            <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
+                <div class="toc-widget">
+                    <div class="toc-title"><i class="fa fa-list-alt"></i>&nbsp;&nbsp;目录</div>
+                    <div id="toc-content"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- TOC 悬浮按钮. -->
+
+        <div id="floating-toc-btn" class="hide-on-med-and-down">
+            <a class="btn-floating btn-large bg-color">
+                <i class="fa fa-list"></i>
+            </a>
+        </div>
+
+
+        <script src="../libs/tocbot/tocbot.min.js"></script>
+        <script>
+            $(function () {
+                tocbot.init({
+                    tocSelector: '#toc-content',
+                    contentSelector: '#articleContent',
+                    headingsOffset: -($(window).height() * 0.4 - 45),
+                    // headingsOffset: -205,
+                    headingSelector: 'h1, h2, h3, h4, h5'
+                });
+
+                // modify the toc link href to support Chinese.
+                let i = 0;
+                let tocHeading = 'toc-heading-';
+                $('#toc-content a').each(function () {
+                    $(this).attr('href', '#' + tocHeading + (++i));
+                });
+
+                // modify the heading title id to support Chinese.
+                i = 0;
+                $('#articleContent').children('h1, h2, h3, h4, h5').each(function () {
+                    $(this).attr('id', tocHeading + (++i));
+                });
+
+                // Set scroll toc fixed.
+                let tocHeight = parseInt($(window).height() * 0.4 - 64);
+                let $tocWidget = $('.toc-widget');
+                $(window).scroll(function () {
+                    let scroll = $(window).scrollTop();
+                    /* add post toc fixed. */
+                    if (scroll > tocHeight) {
+                        $tocWidget.addClass('toc-fixed');
+                    } else {
+                        $tocWidget.removeClass('toc-fixed');
+                    }
+                });
+
+
+                /* 修复文章卡片 div 的宽度. */
+                let fixPostCardWidth = function (srcId, targetId) {
+                    let srcDiv = $('#' + srcId);
+                    if (srcDiv.length === 0) {
+                        return;
+                    }
+
+                    let w = srcDiv.width();
+                    if (w >= 450) {
+                        w = w + 21;
+                    } else if (w >= 350 && w < 450) {
+                        w = w + 18;
+                    } else if (w >= 300 && w < 350) {
+                        w = w + 16;
+                    } else {
+                        w = w + 14;
+                    }
+                    $('#' + targetId).width(w);
+                };
+
+                // 切换TOC目录展开收缩的相关操作.
+                const expandedClass = 'expanded';
+                let $tocAside = $('#toc-aside');
+                let $mainContent = $('#main-content');
+                $('#floating-toc-btn .btn-floating').click(function () {
+                    if ($tocAside.hasClass(expandedClass)) {
+                        $tocAside.removeClass(expandedClass).slideUp(500);
+                        $mainContent.removeClass('l9');
+                    } else {
+                        $tocAside.addClass(expandedClass).slideDown(500);
+                        $mainContent.addClass('l9');
+                    }
+                    fixPostCardWidth('artDetail', 'prenext-posts');
+                });
+
+            });
+        </script>
+
+
+    </main>
+
+
+    <footer class="page-footer bg-color">
+        <div class="container row center-align">
+            <div class="col s12 m8 l8 copy-right">
+                Copyright&copy; 2018-2020 mingxuanblog.cn
+
+                <br>
+                <!-- <span id="sitetime"></span><span class="my-face">ღゝ◡╹)ノ♡</span>
+                <br> -->
+
+                <span> 赣ICP备19007380号</span>
+
+                <br>
+
+
+
+
+
+                <span id="busuanzi_container_site_pv" style="display:none"></span>
+                总访问量: <span id="busuanzi_value_site_pv" class="white-color"></span>
+
+
+
+                <span id="busuanzi_container_site_uv" style="display:none"></span>
+                人次&nbsp; | &nbsp;访客人数: <span id="busuanzi_value_site_uv" class="white-color"></span> 人
+
+                <br>
+
+            </div>
+
+            <div class="col s12 m4 l4 social-link social-statis">
+                <a href="#" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top"
+                    data-delay="50">
+                    <i class="fa fa-github"></i>
+                </a>
+
+
+
+                <a href="#" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
+                    <i class="fa fa-envelope-open"></i>
+                </a>
+
+
+
+
+
+
+                <a href="#" class="tooltipped" target="_blank" data-tooltip="访问我的QQ空间" data-position="top"
+                    data-delay="50">
+                    <i class="fa fa-qq"></i>
+                </a>
+
+
+
+
+
+                <a href="#" class="tooltipped" target="_blank" data-tooltip="RSS 订阅" data-position="top"
+                    data-delay="50">
+                    <i class="fa fa-rss"></i>
+                </a>
+            </div>
+
+        </div>
+    </footer>
+
+    <div class="progress-bar"></div>
+
+
+
+
+
+
+
+
+    <!-- 回到顶部按钮 -->
+    <div id="backTop" class="top-scroll">
+        <a class="btn-floating btn-large waves-effect waves-light" href="#!">
+            <i class="fa fa-angle-up"></i>
+        </a>
+    </div>
+
+
+    <script src="../libs/materialize/materialize.min.js"></script>
+    <script src="../libs/masonry/masonry.pkgd.min.js"></script>
+    <script src="../libs/aos/aos.js"></script>
+    <script src="../libs/scrollprogress/scrollProgress.min.js"></script>
+    <script src="../libs/lightGallery/js/lightgallery-all.min.js"></script>
+    <script src="../js/matery.js"></script>
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+
+
+
+
+    <script src="../libs/others/clicklove.js"></script>
+
+
+
+    <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+    <!-- 鼠标点击烟花爆炸效果 -->
+
+
+    <!-- 背景雪花飘落特效 -->
+
+
+    <!-- 鼠标点击文字特效 -->
+
+
+    <!-- 背景雪花飘落特效 -->
+
+
+
+    <!-- 背景动态彩带 洪卫 shw 2018  add 2019.09.15-->
+
+
+    <script type="text/javascript">
+        var windowWidth = $(window).width();
+        if (windowWidth > 992) {
+            document.write('<script type="text/javascript" src="../libs/background/ribbon-dynamic.js"><\/script>');
+        }
+    </script>
+
+
+
+
+</body>
+
+</html>

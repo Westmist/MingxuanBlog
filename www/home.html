@@ -1,0 +1,1337 @@
+<!DOCTYPE HTML>
+<html lang="zh">
+
+<head>
+    <meta name="generator" content="Hexo 3.8.0">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="renderer" content="webkit|ie-stand|ie-comp">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <title>明轩博客</title>
+    <link rel="icon" href="favicon.ico">
+
+    <!-- <link rel="stylesheet" type="text/css" href="./libs/awesome/css/font-awesome.min.css"> -->
+    <link rel="stylesheet" type="text/css" href="https://cdn.staticfile.org/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <link rel="stylesheet" type="text/css" href="./libs/materialize/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="./libs/aos/aos.css">
+    <link rel="stylesheet" type="text/css" href="./libs/animate/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="./libs/lightGallery/css/lightgallery.min.css">
+    <link rel="stylesheet" type="text/css" href="./css/matery.css">
+    <link rel="stylesheet" type="text/css" href="./css/my.css">
+
+    <style type="text/css">
+        code[class*="language-"],
+        pre[class*="language-"] {
+            white-space: pre !important;
+        }
+    </style>
+
+    <!-- 使用CDN加速 -->
+    <script src="https://cdn.staticfile.org/jquery/2.2.0/jquery.min.js"></script>
+    <script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
+    <link rel="stylesheet" href="./css/prism-tomorrow.css" type="text/css">
+</head>
+
+<body>
+
+    <header class="navbar-fixed">
+        <nav id="headNav" class="bg-color nav-transparent">
+            <div id="navContainer" class="nav-wrapper container">
+                <div class="brand-logo">
+                    <a href="#" class="waves-effect waves-light">
+                        <img src="./images/logo.png" class="logo-img" alt="LOGO">
+                        <span class="logo-span">Hi 明轩</span>
+                    </a>
+                </div>
+
+
+                <a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i
+                        class="fa fa-navicon"></i></a>
+                <ul class="right nav-menu">
+                    <li class="hide-on-med-and-down nav-item">
+                        <a href="#" class="waves-effect waves-light">
+                            <i class="fa fa-home"></i>
+                            <span>首页</span>
+                        </a>
+                    </li>
+
+                    <li class="hide-on-med-and-down nav-item">
+                        <a href="./pages/bookmarks.html" class="waves-effect waves-light" target="_blank">
+                            <i class="fa fa-tags"></i>
+                            <span>书签</span>
+                        </a>
+                    </li>
+
+                    <li class="hide-on-med-and-down nav-item">
+                        <a href="#" class="waves-effect waves-light">
+                            <i class="fa fa-bookmark"></i>
+                            <span>笔记</span>
+                        </a>
+                    </li>
+
+                    <li class="hide-on-med-and-down nav-item">
+                        <a href="#" class="waves-effect waves-light">
+                            <i class="fa fa-archive"></i>
+                            <span>宝箱</span>
+                        </a>
+                    </li>
+
+                    <li class="hide-on-med-and-down nav-item">
+                        <a href="#" class="waves-effect waves-light">
+                            <i class="fa fa-user-circle-o"></i>
+                            <span>关于</span>
+                        </a>
+                    </li>
+                </ul>
+
+                <div id="mobile-nav" class="side-nav sidenav">
+                    <div class="mobile-head bg-color">
+                        <img src="./images/logo.png" class="logo-img circle responsive-img">
+                        <div class="logo-name">明轩博客</div>
+                        <div class="logo-desc">
+                            技术指北大全
+                        </div>
+                    </div>
+
+                    <ul class="menu-list mobile-menu-list">
+                        <li>
+                            <a href="#" class="waves-effect waves-light">
+                                <i class="fa fa-fw fa-home"></i>
+                                首页
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="#" class="waves-effect waves-light">
+                                <i class="fa fa-fw fa-tags"></i>
+                                书签
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="#" class="waves-effect waves-light">
+                                <i class="fa fa-fw fa-bookmark"></i>
+                                笔记
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="#" class="waves-effect waves-light">
+                                <i class="fa fa-fw fa-archive"></i>
+                                宝箱
+                            </a>
+                        </li>
+
+
+                        <li>
+                            <a href="./aboutme.html" class="waves-effect waves-light">
+                                <i class="fa fa-fw fa-user-circle-o"></i>
+                                关于
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+
+            <style>
+                .nav-transparent .github-corner {
+                    display: none !important;
+                }
+
+                .github-corner {
+                    position: absolute;
+                    z-index: 10;
+                    top: 0;
+                    right: 0;
+                    border: 0;
+                    transform: scale(1.1);
+                }
+
+                .github-corner svg {
+                    color: #0f9d58;
+                    fill: #fff;
+                    height: 64px;
+                    width: 64px;
+                }
+
+                .github-corner:hover .octo-arm {
+                    animation: a 0.56s ease-in-out;
+                }
+
+                .github-corner .octo-arm {
+                    animation: none;
+                }
+
+                @keyframes a {
+
+                    0%,
+                    to {
+                        transform: rotate(0);
+                    }
+
+                    20%,
+                    60% {
+                        transform: rotate(-25deg);
+                    }
+
+                    40%,
+                    80% {
+                        transform: rotate(10deg);
+                    }
+                }
+            </style>
+        </nav>
+    </header>
+
+    <style>
+        .carousel-control {
+            width: 45px;
+            height: 45px;
+            line-height: 55px;
+            border-radius: 45px;
+            background: transparent;
+            cursor: pointer;
+            z-index: 100;
+        }
+
+        #prev-cover {
+            position: absolute;
+            top: 48%;
+            left: 8px;
+        }
+
+        #next-cover {
+            position: absolute;
+            top: 48%;
+            right: 8px;
+            ;
+        }
+
+        #prev-cover i {
+            margin-right: 3px;
+        }
+
+        #next-cover i {
+            margin-left: 3px;
+        }
+
+        .carousel-control:hover {
+            background-color: rgba(0, 0, 0, .4);
+        }
+
+        .carousel-control i {
+            color: #fff;
+            font-size: 2.4rem;
+        }
+    </style>
+
+
+    <div class="carousel carousel-slider center index-cover" data-indicators="true" style="margin-top: -64px;">
+
+        <div id="prev-cover" class="left waves-effect carousel-control">
+            <i class="icon fa fa-angle-left"></i>
+        </div>
+        <div id="next-cover" class="right waves-effect carousel-control">
+            <i class="icon fa fa-angle-right"></i>
+        </div>
+
+
+        <div class="carousel-item red white-text bg-cover about-cover " style="background-image: url('./images/homepage/banner1.jpg');">
+            <div class="container">
+                <div class="row">
+                    <div class="col s10 offset-s1 m8 offset-m2 l8 offset-l2">
+                        <div class="brand">
+                            <div class="title center-align">
+                                Mingxuan&#39;s BLOG
+                            </div>
+                            <div class="description center-align">
+                                <span id="jinrishici-sentence">正在加载今日诗词...</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="cover-btns">
+                    <a href="#indexCard" class="waves-effect waves-light btn">
+                        <i class="fa fa-angle-double-down"></i>开始阅读
+                    </a>
+
+                    <a href="#" class="waves-effect waves-light btn" target="_blank">
+                        <i class="fa fa-github-alt"></i>Github
+                    </a>
+
+                </div>
+                <div class="cover-social-link">
+                    <a href="#" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top"
+                        data-delay="50">
+                        <i class="fa fa-github"></i>
+                    </a>
+
+                    <a href="#" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top"
+                        data-delay="50">
+                        <i class="fa fa-envelope-open"></i>
+                    </a>
+
+                    <a href="#" class="tooltipped" target="_blank" data-tooltip="访问我的QQ空间" data-position="top"
+                        data-delay="50">
+                        <i class="fa fa-qq"></i>
+                    </a>
+
+                    <a href="#" class="tooltipped" target="_blank" data-tooltip="RSS 订阅" data-position="top"
+                        data-delay="50">
+                        <i class="fa fa-rss"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="carousel-item amber white-text carousel-post bg-cover" style="background-image: url('./images/homepage/investment.jpg');">
+            <div class="container">
+                <div class="row">
+                    <div class="col s10 offset-s1">
+                        <div class="title center-align">Leetcode算法专栏</div>
+                        <div class="description center-align">
+
+                            玩转数据结构、领略算法魅力，让你解决问题时事半功倍
+
+                        </div>
+                        <div class="cover-btns">
+                            <a href="./pages/leetcode.html" class="waves-effect waves-light btn" target="_blank">
+                                <i class="icon fa fa-eye fa-fw"></i>阅读更多
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="carousel-item amber white-text carousel-post bg-cover" style="background-image: url('./images/homepage/ocean.jpg');">
+            <div class="container">
+                <div class="row">
+                    <div class="col s10 offset-s1">
+                        <div class="title center-align">Nginx搭建静态网站</div>
+                        <div class="description center-align">
+                            使用Nginx搭建静态网站并完成SSL证书的配置，全站实现Https协议.
+                        </div>
+                        <div class="cover-btns">
+                            <a href="./pages/creatwebsite.html" class="waves-effect waves-light btn" target="_blank">
+                                <i class="icon fa fa-eye fa-fw"></i>阅读更多
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="carousel-item amber white-text carousel-post bg-cover" style="background-image: url('./images/homepage/milky.jpg');">
+            <div class="container">
+                <div class="row">
+                    <div class="col s10 offset-s1">
+                        <div class="title center-align">Ajax笔记</div>
+                        <div class="description center-align">
+
+                            Ajax随笔，Ajax是XMLHttpRequest对象和JS,XML,CSS和DOM等技术的组合.
+
+                        </div>
+                        <div class="cover-btns">
+                            <a href="./pages/ajaxNote.html" class="waves-effect waves-light btn" target="_blank">
+                                <i class="icon fa fa-eye fa-fw"></i>阅读更多
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        
+
+    </div>
+
+    <script>
+        $(function () {
+            let coverSlider = $('.carousel');
+            coverSlider.carousel({
+                duration: Number('120'),
+                fullWidth: true,
+                indicators: 'true' === 'true'
+            });
+
+            let carouselIntervalId;
+
+            // Loop to call the next cover article picture.
+            let autoCarousel = function () {
+                carouselIntervalId = setInterval(function () {
+                    coverSlider.carousel('next');
+                }, 5000);
+            };
+            autoCarousel();
+
+
+            let restartPlay = function () {
+
+                clearInterval(carouselIntervalId);
+                autoCarousel();
+
+            };
+
+
+            // prev and next cover post.
+            $('#prev-cover').click(function () {
+                coverSlider.carousel('prev');
+                restartPlay();
+            });
+            $('#next-cover').click(function () {
+                coverSlider.carousel('next');
+                restartPlay();
+            });
+
+        });
+    </script>
+
+
+
+    <main class="content">
+
+
+        <div id="indexCard" class="index-card">
+            <div class="container ">
+                <div class="card">
+                    <div class="card-content">
+
+                        <link rel="stylesheet" href="./libs/aplayer/APlayer.min.css">
+                        <div class="music-player">
+
+                            <div class="row">
+
+
+                                <div class="col s12 ">
+                                    <div id="aplayer" class="music"></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <script src="./libs/aplayer/APlayer.min.js"></script>
+                        <script>
+                            $(function () {
+                                new APlayer({
+                                    container: document.getElementById('aplayer'),
+                                    fixed: 'false' === 'true',
+                                    autoplay: 'false' === 'true',
+                                    theme: '#542674',
+                                    loop: 'all',
+                                    order: 'list',
+                                    preload: 'auto',
+                                    volume: Number('0.7'),
+                                    listFolded: 'false' === 'true',
+                                    listMaxHeight: '197px',
+                                    audio: JSON.parse('[{"name":"下个，路口，见","artist":"李宇春","url":"./musics/li.mp3","cover":"./images/homepage/li_music.jpg"},{"name":"Something Just Like This","artist":"The Chainsmokers、Coldplay","url":"./musics/something.mp3","cover":"./images/homepage/some_music.jpg"},{"name":"Annie\'s Wonderland","artist":"明轩","url":"./musics/annie.mp3","cover":"./images/homepage/Annie_music.jpg"}]')
+                                });
+                            });
+                        </script>
+
+                        <div id="recommend-sections" class="recommend">
+
+                            <div class="title"><i class="fa fa-thumbs-o-up"></i>&nbsp;&nbsp;推荐文章</div>
+                            <div class="row">
+                                <div class="col s12 m6">
+                                    <div class="post-card" style="background-image: url('#')">
+                                        <div class="post-body">
+                                            <div class="post-categories">
+                                                <!-- 分类链接 -->
+                                                <a href="#" class="category" target="_blank">Java</a>
+
+                                            </div>
+                                            <a href="#" target="_blank">
+                                                <h3 class="post-title">Synchronized深度解析</h3>
+                                            </a>
+
+                                            <!-- 标题摘要 -->
+                                            <p class="post-description">
+
+                                                Synchronized 的两种用法、Synchronized关键字原理.
+
+                                            </p>
+                                            <!-- 阅读更多 -->
+                                            <a href="#" target="_blank" class="read-more btn waves-effect waves-light"
+                                                style="background: linear-gradient(to right, #FF5E3A 0%, #FF2A68 100%)">
+                                                <i class="icon fa fa-eye fa-fw"></i>阅读更多
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                                <div class="col s12 m6">
+                                    <div class="post-card" style="background-image: url('#')">
+                                        <div class="post-body">
+                                            <div class="post-categories">
+
+                                                <a href="#" class="category" target="_blank">Java</a>
+
+                                            </div>
+                                            <a href="#" target="_blank">
+                                                <h3 class="post-title">synchronized和ReentrantLock区别</h3>
+                                            </a>
+                                            <p class="post-description">
+
+                                                synchronized是Java内建的同步机制,本节谈谈synchronized和ReentrantLock的区别.
+
+                                            </p>
+                                            <a href="#" target="_blank" class="read-more btn waves-effect waves-light"
+                                                style="background: linear-gradient(to right, #EF4DB6 0%, #C643FC 100%)">
+                                                <i class="icon fa fa-eye fa-fw"></i>阅读更多
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                                <div class="col s12 m6" data-aos="zoom-in-up">
+                                    <div class="post-card" style="background-image: url('#')">
+                                        <div class="post-body">
+                                            <div class="post-categories">
+
+                                                <a href="#" class="category" target="_blank">大数据</a>
+
+                                            </div>
+                                            <a href="#" target="_blank">
+                                                <h3 class="post-title">新一代流式计算引擎 Flink</h3>
+                                            </a>
+                                            <p class="post-description">
+
+                                                Apache Flink 是为分布式、高性能、随时可用以及准确的流处理应用程序打造的开源流处理框架.
+
+                                            </p>
+                                            <a href="#" target="_blank" class="read-more btn waves-effect waves-light"
+                                                style="background: linear-gradient(to right, #1AD6FD 0%, #1D62F0 100%)">
+                                                <i class="icon fa fa-eye fa-fw"></i>阅读更多
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                                <div class="col s12 m6" data-aos="zoom-in-up">
+                                    <div class="post-card" style="background-image: url('#')">
+                                        <div class="post-body">
+                                            <div class="post-categories">
+
+                                                <a href="#" class="category" target="_blank">Java</a>
+
+                                            </div>
+                                            <a href="#" target="_blank">
+                                                <h3 class="post-title">HashMap完全解读</h3>
+                                            </a>
+                                            <p class="post-description">
+
+                                                基于哈希表的Map接口的实现.此实现提供所有可选的映射操作,并允许使用 null 值和 null 键.
+
+                                            </p>
+                                            <a href="#" target="_blank" class="read-more btn waves-effect waves-light"
+                                                style="background: linear-gradient(to right, #FFCC00 0%, #FF9500 100%)">
+                                                <i class="icon fa fa-eye fa-fw"></i>阅读更多
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                            </div>
+
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+
+        <!-- 所有文章卡片 -->
+        <article id="articles" class="container articles">
+            <div class="row article-row">
+
+                <div class="article col s12 m6 l4" data-aos="zoom-in">
+                    <div class="card">
+                        <!-- 文章链接 -->
+                        <a href="#" target="_blank">
+                            <div class="card-image">
+
+                                <!-- 文章图片背景 -->
+                                <img src="#" class="responsive-img" alt="数据结构与算法专栏">
+
+                                <span class="card-title">数据结构与算法专栏</span>
+                            </div>
+                        </a>
+
+                        <div class="card-content article-content">
+                            <!-- 内容摘要 -->
+                            <div class="summary block-with-text">
+
+                                掌握了数据结构与算法，你看待问题的深度，解决问题的角度就会完全不一样
+
+                            </div>
+                            <div class="publish-info">
+                                <span class="publish-date">
+                                    <i class="fa fa-clock-o fa-fw icon-date"></i>2019-11-17
+                                </span>
+                                <span class="publish-author">
+
+                                    <i class="fa fa-bookmark fa-fw icon-category"></i>
+
+                                    <!-- 文章卡片书签链接 -->
+                                    <a href="#" class="post-category" target="_blank">
+                                        数据结构与算法分析
+                                    </a>
+
+
+                                </span>
+                            </div>
+                        </div>
+
+
+                        <div class="card-action article-tags">
+                            <!-- 文章卡片底部分类标签链接 -->
+                            <a href="#" target="_blank">
+                                <span class="chip bg-color">数据结构与算法分析</span>
+                            </a>
+
+                        </div>
+
+                    </div>
+                </div>
+
+
+                <div class="article col s12 m6 l4" data-aos="zoom-in">
+                    <div class="card">
+                        <a href="#" target="_blank">
+                            <div class="card-image">
+
+                                <img src="#" class="responsive-img" alt="Java类加载机制详解">
+
+                                <span class="card-title">Java类加载机制详解</span>
+                            </div>
+                        </a>
+
+                        <div class="card-content article-content">
+                            <div class="summary block-with-text">
+
+                                类从被加载到虚拟机内存中开始,到卸载出内存为止,对它的整个生命周期进行解析.
+
+                            </div>
+                            <div class="publish-info">
+                                <span class="publish-date">
+                                    <i class="fa fa-clock-o fa-fw icon-date"></i>2019-02-15
+                                </span>
+                                <span class="publish-author">
+
+                                    <i class="fa fa-bookmark fa-fw icon-category"></i>
+
+                                    <a href="#" class="post-category" target="_blank">
+                                        Java
+                                    </a>
+
+
+                                </span>
+                            </div>
+                        </div>
+
+
+                        <div class="card-action article-tags">
+
+                            <a href="#" target="_blank">
+                                <span class="chip bg-color">JVM</span>
+                            </a>
+
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="article col s12 m6 l4" data-aos="zoom-in">
+                    <div class="card">
+                        <a href="#" target="_blank">
+                            <div class="card-image">
+
+                                <img src="#" class="responsive-img" alt="新一代流式计算引擎 Flink">
+
+                                <span class="card-title">新一代流式计算引擎 Flink</span>
+                            </div>
+                        </a>
+
+                        <div class="card-content article-content">
+                            <div class="summary block-with-text">
+
+                                Apache Flink 是为分布式、高性能、随时可用以及准确的流处理应用程序打造的开源流处理框架.
+
+                            </div>
+                            <div class="publish-info">
+                                <span class="publish-date">
+                                    <i class="fa fa-clock-o fa-fw icon-date"></i>2019-01-16
+                                </span>
+                                <span class="publish-author">
+
+                                    <i class="fa fa-bookmark fa-fw icon-category"></i>
+
+                                    <a href="#" class="post-category" target="_blank">
+                                        大数据
+                                    </a>
+
+
+                                </span>
+                            </div>
+                        </div>
+
+
+                        <div class="card-action article-tags">
+
+                            <a href="#" target="_blank">
+                                <span class="chip bg-color">大数据</span>
+                            </a>
+
+                            <a href="#" target="_blank">
+                                <span class="chip bg-color">Flink</span>
+                            </a>
+
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="article col s12 m6 l4" data-aos="zoom-in">
+                    <div class="card">
+                        <a href="#" target="_blank">
+                            <div class="card-image">
+
+                                <img src="#" class="responsive-img" alt="HashMap完全解读">
+
+                                <span class="card-title">HashMap完全解读</span>
+                            </div>
+                        </a>
+
+                        <div class="card-content article-content">
+                            <div class="summary block-with-text">
+
+                                基于哈希表的Map接口的实现.此实现提供所有可选的映射操作,并允许使用 null 值和 null 键.
+
+                            </div>
+                            <div class="publish-info">
+                                <span class="publish-date">
+                                    <i class="fa fa-clock-o fa-fw icon-date"></i>2019-01-10
+                                </span>
+                                <span class="publish-author">
+
+                                    <i class="fa fa-bookmark fa-fw icon-category"></i>
+
+                                    <a href="#" class="post-category" target="_blank">
+                                        Java
+                                    </a>
+
+
+                                </span>
+                            </div>
+                        </div>
+
+
+                        <div class="card-action article-tags">
+
+                            <a href="#" target="_blank">
+                                <span class="chip bg-color">集合框架</span>
+                            </a>
+
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="article col s12 m6 l4" data-aos="zoom-in">
+                    <div class="card">
+                        <a href="#" target="_blank">
+                            <div class="card-image">
+
+                                <img src="#" class="responsive-img" alt="多线程特性解读">
+
+                                <span class="card-title">多线程特性解读</span>
+                            </div>
+                        </a>
+
+                        <div class="card-content article-content">
+                            <div class="summary block-with-text">
+
+                                对多线程的原子性、可见性、有序性等进行解读，以及对Volatile关键字详解.
+
+                            </div>
+                            <div class="publish-info">
+                                <span class="publish-date">
+                                    <i class="fa fa-clock-o fa-fw icon-date"></i>2019-01-07
+                                </span>
+                                <span class="publish-author">
+
+                                    <i class="fa fa-bookmark fa-fw icon-category"></i>
+
+                                    <a href="#" class="post-category" target="_blank">
+                                        Java
+                                    </a>
+
+
+                                </span>
+                            </div>
+                        </div>
+
+
+                        <div class="card-action article-tags">
+
+                            <a href="#" target="_blank">
+                                <span class="chip bg-color">多线程</span>
+                            </a>
+
+                            <a href="#" target="_blank">
+                                <span class="chip bg-color">并发编程</span>
+                            </a>
+
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="article col s12 m6 l4" data-aos="zoom-in">
+                    <div class="card">
+                        <a href="#" target="_blank">
+                            <div class="card-image">
+
+                                <img src="#" class="responsive-img" alt="Synchronized深度解析">
+
+                                <span class="card-title">Synchronized深度解析</span>
+                            </div>
+                        </a>
+
+                        <div class="card-content article-content">
+                            <div class="summary block-with-text">
+
+                                Synchronized 的两种用法、Synchronized关键字原理.
+
+                            </div>
+                            <div class="publish-info">
+                                <span class="publish-date">
+                                    <i class="fa fa-clock-o fa-fw icon-date"></i>2019-01-06
+                                </span>
+                                <span class="publish-author">
+
+                                    <i class="fa fa-bookmark fa-fw icon-category"></i>
+
+                                    <a href="#" class="post-category" target="_blank">
+                                        Java
+                                    </a>
+
+
+                                </span>
+                            </div>
+                        </div>
+
+
+                        <div class="card-action article-tags">
+
+                            <a href="#" target="_blank">
+                                <span class="chip bg-color">多线程</span>
+                            </a>
+
+                            <a href="#" target="_blank">
+                                <span class="chip bg-color">并发编程</span>
+                            </a>
+
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="article col s12 m6 l4" data-aos="zoom-in">
+                    <div class="card">
+                        <a href="#" target="_blank">
+                            <div class="card-image">
+
+                                <img src="#" class="responsive-img" alt="HDFS简介及其功能">
+
+                                <span class="card-title">HDFS简介及其功能</span>
+                            </div>
+                        </a>
+
+                        <div class="card-content article-content">
+                            <div class="summary block-with-text">
+
+                                从 HDFS 的原理说起，谈谈 HDFS 是如何实现大数据高速、可靠的存储和访问的。
+
+                            </div>
+                            <div class="publish-info">
+                                <span class="publish-date">
+                                    <i class="fa fa-clock-o fa-fw icon-date"></i>2019-01-02
+                                </span>
+                                <span class="publish-author">
+
+                                    <i class="fa fa-bookmark fa-fw icon-category"></i>
+
+                                    <a href="#" class="post-category" target="_blank">
+                                        大数据
+                                    </a>
+
+
+                                </span>
+                            </div>
+                        </div>
+
+
+                        <div class="card-action article-tags">
+
+                            <a href="#" target="_blank">
+                                <span class="chip bg-color">大数据</span>
+                            </a>
+
+                            <a href="#" target="_blank">
+                                <span class="chip bg-color">HDFS</span>
+                            </a>
+
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="article col s12 m6 l4" data-aos="zoom-in">
+                    <div class="card">
+                        <a href="#" target="_blank">
+                            <div class="card-image">
+
+                                <img src="#" class="responsive-img" alt="synchronized和ReentrantLock区别">
+
+                                <span class="card-title">synchronized和ReentrantLock区别</span>
+                            </div>
+                        </a>
+
+                        <div class="card-content article-content">
+                            <div class="summary block-with-text">
+
+                                synchronized是Java内建的同步机制,本节谈谈synchronized和ReentrantLock的区别.
+
+                            </div>
+                            <div class="publish-info">
+                                <span class="publish-date">
+                                    <i class="fa fa-clock-o fa-fw icon-date"></i>2019-01-01
+                                </span>
+                                <span class="publish-author">
+
+                                    <i class="fa fa-bookmark fa-fw icon-category"></i>
+
+                                    <a href="#" class="post-category" target="_blank">
+                                        Java
+                                    </a>
+
+
+                                </span>
+                            </div>
+                        </div>
+
+
+                        <div class="card-action article-tags">
+
+                            <a href="#" target="_blank">
+                                <span class="chip bg-color">多线程</span>
+                            </a>
+
+                            <a href="#" target="_blank">
+                                <span class="chip bg-color">并发编程</span>
+                            </a>
+
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="article col s12 m6 l4" data-aos="zoom-in">
+                    <div class="card">
+                        <a href="#" target="_blank">
+                            <div class="card-image">
+
+                                <img src="#" class="responsive-img" alt="Kafka消息中间件">
+
+                                <span class="card-title">Kafka消息中间件</span>
+                            </div>
+                        </a>
+
+                        <div class="card-content article-content">
+                            <div class="summary block-with-text">
+
+                                Apache Kafka是一个分布式发布-订阅消息系统和一个强大的队列,可以处理大量的数据.
+
+                            </div>
+                            <div class="publish-info">
+                                <span class="publish-date">
+                                    <i class="fa fa-clock-o fa-fw icon-date"></i>2018-11-22
+                                </span>
+                                <span class="publish-author">
+
+                                    <i class="fa fa-bookmark fa-fw icon-category"></i>
+
+                                    <a href="#" class="post-category" target="_blank">
+                                        基础组件
+                                    </a>
+
+
+                                </span>
+                            </div>
+                        </div>
+
+
+                        <div class="card-action article-tags">
+
+                            <a href="#" target="_blank">
+                                <span class="chip bg-color">中间件</span>
+                            </a>
+
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="article col s12 m6 l4" data-aos="zoom-in">
+                    <div class="card">
+                        <a href="#" target="_blank">
+                            <div class="card-image">
+
+                                <img src="#" class="responsive-img" alt="阿里巴巴Java开发手册">
+
+                                <span class="card-title">阿里巴巴Java开发手册</span>
+                            </div>
+                        </a>
+
+                        <div class="card-content article-content">
+                            <div class="summary block-with-text">
+
+                                阿里巴巴Java开发手册、阐述编程规约、异常处理、单元测试、安全规约等.
+
+                            </div>
+                            <div class="publish-info">
+                                <span class="publish-date">
+                                    <i class="fa fa-clock-o fa-fw icon-date"></i>2018-08-17
+                                </span>
+                                <span class="publish-author">
+
+                                    <i class="fa fa-bookmark fa-fw icon-category"></i>
+
+                                    <a href="#" class="post-category" target="_blank">
+                                        Java
+                                    </a>
+
+
+                                </span>
+                            </div>
+                        </div>
+
+
+                        <div class="card-action article-tags">
+
+                            <a href="#" target="_blank">
+                                <span class="chip bg-color">Java</span>
+                            </a>
+
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="article col s12 m6 l4" data-aos="zoom-in">
+                    <div class="card">
+                        <a href="#" target="_blank">
+                            <div class="card-image">
+
+                                <img src="#" class="responsive-img" alt="MapReduce编程模型">
+
+                                <span class="card-title">MapReduce编程模型</span>
+                            </div>
+                        </a>
+
+                        <div class="card-content article-content">
+                            <div class="summary block-with-text">
+
+                                MapReduce 既是一个编程模型,又是一个计算框架,是一种非常简单又非常强大的编程模型.
+
+                            </div>
+                            <div class="publish-info">
+                                <span class="publish-date">
+                                    <i class="fa fa-clock-o fa-fw icon-date"></i>2018-07-29
+                                </span>
+                                <span class="publish-author">
+
+                                    <i class="fa fa-bookmark fa-fw icon-category"></i>
+
+                                    <a href="#" class="post-category" target="_blank">
+                                        大数据
+                                    </a>
+
+
+                                </span>
+                            </div>
+                        </div>
+
+
+                        <div class="card-action article-tags">
+
+                            <a href="#" target="_blank">
+                                <span class="chip bg-color">大数据</span>
+                            </a>
+
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="article col s12 m6 l4" data-aos="zoom-in">
+                    <div class="card">
+                        <a href="#" target="_blank">
+                            <div class="card-image">
+
+                                <img src="#" class="responsive-img" alt="Redis使用总结">
+
+                                <span class="card-title">Redis使用总结</span>
+                            </div>
+                        </a>
+
+                        <div class="card-content article-content">
+                            <div class="summary block-with-text">
+
+                                Redis 是完全开源免费的,遵守BSD协议,是一个高性能的key-value数据库.
+
+                            </div>
+                            <div class="publish-info">
+                                <span class="publish-date">
+                                    <i class="fa fa-clock-o fa-fw icon-date"></i>2018-07-10
+                                </span>
+                                <span class="publish-author">
+
+                                    <i class="fa fa-bookmark fa-fw icon-category"></i>
+
+                                    <a href="#" class="post-category" target="_blank">
+                                        数据库
+                                    </a>
+
+
+                                </span>
+                            </div>
+                        </div>
+
+
+                        <div class="card-action article-tags">
+
+                            <a href="#" target="_blank">
+                                <span class="chip bg-color">Redis</span>
+                            </a>
+
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+        </article>
+
+    </main>
+
+
+    <div class="container paging">
+        <div class="row">
+            <div class="col s6 m4 l4">
+
+                <a class="left btn-floating btn-large disabled">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+
+            </div>
+            <div class="page-info col m4 l4 hide-on-small-only">
+                <div class="center-align b-text-gray">1 / 4</div>
+            </div>
+            <div class="col s6 m4 l4">
+
+                <a href="#" class="right btn-floating btn-large waves-effect waves-light bg-color">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+
+            </div>
+        </div>
+    </div>
+
+
+    <footer class="page-footer bg-color">
+        <div class="container row center-align">
+            <div class="col s12 m8 l8 copy-right">
+                Copyright&copy; 2018-2020 明轩博客
+
+                <br>
+                <!-- <span id="sitetime"></span><span class="my-face">ღゝ◡╹)ノ♡</span>
+                <br> -->
+
+                <span> 赣ICP备19007380号</span>
+                <br>
+
+
+
+
+
+                <span id="busuanzi_container_site_pv" style="display:none"></span>
+                总访问量: <span id="busuanzi_value_site_pv" class="white-color"></span>
+
+
+
+                <span id="busuanzi_container_site_uv" style="display:none"></span>
+                人次&nbsp; | &nbsp;访客人数: <span id="busuanzi_value_site_uv" class="white-color"></span> 人
+
+                <br>
+
+            </div>
+
+            <div class="col s12 m4 l4 social-link social-statis">
+                <a href="#" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top"
+                    data-delay="50">
+                    <i class="fa fa-github"></i>
+                </a>
+
+
+
+                <a href="#" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
+                    <i class="fa fa-envelope-open"></i>
+                </a>
+
+
+
+
+
+
+                <a href="#" class="tooltipped" target="_blank" data-tooltip="访问我的QQ空间" data-position="top"
+                    data-delay="50">
+                    <i class="fa fa-qq"></i>
+                </a>
+
+
+
+
+
+                <a href="#" class="tooltipped" target="_blank" data-tooltip="RSS 订阅" data-position="top"
+                    data-delay="50">
+                    <i class="fa fa-rss"></i>
+                </a>
+            </div>
+
+        </div>
+    </footer>
+
+    <div class="progress-bar"></div>
+
+    
+    <!-- 回到顶部按钮 -->
+    <div id="backTop" class="top-scroll">
+        <a class="btn-floating btn-large waves-effect waves-light" href="#!">
+            <i class="fa fa-angle-up"></i>
+        </a>
+    </div>
+
+
+    <script src="./libs/materialize/materialize.min.js"></script>
+    <script src="./libs/masonry/masonry.pkgd.min.js"></script>
+    <script src="./libs/aos/aos.js"></script>
+    <script src="./libs/scrollprogress/scrollProgress.min.js"></script>
+    <script src="./libs/lightGallery/js/lightgallery-all.min.js"></script>
+    <script src="./js/matery.js"></script>
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+
+
+
+
+    <script src="./libs/others/clicklove.js"></script>
+
+
+
+    <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+    <!-- 鼠标点击烟花爆炸效果 -->
+
+
+    <!-- 背景雪花飘落特效 -->
+
+
+    <!-- 鼠标点击文字特效 -->
+
+
+    <!-- 背景雪花飘落特效 -->
+    <!-- <script type="text/javascript">
+        (function ($) {
+            $.fn.snow = function (options) {
+                var $flake = $('<div id="snowbox" />').css({ 'position': 'absolute', 'z-index': '9999', 'top': '-50px' }).html('❄'),
+                    documentHeight = $(document).height(),
+                    documentWidth = $(document).width(),
+                    defaults = {
+                        minSize: 10,
+                        maxSize: 20,
+                        newOn: 1000,
+                        flakeColor: "#FFFFFF" /* 此处可以定义雪花颜色，若要白色可以改为#FFFFFF */
+                    },
+                    options = $.extend({}, defaults, options);
+                var interval = setInterval(function () {
+                    var startPositionLeft = Math.random() * documentWidth - 100,
+                        startOpacity = 0.5 + Math.random(),
+                        sizeFlake = options.minSize + Math.random() * options.maxSize,
+                        endPositionTop = documentHeight - 200,
+                        endPositionLeft = startPositionLeft - 500 + Math.random() * 500,
+                        durationFall = documentHeight * 10 + Math.random() * 5000;
+                    $flake.clone().appendTo('body').css({
+                        left: startPositionLeft,
+                        opacity: startOpacity,
+                        'font-size': sizeFlake,
+                        color: options.flakeColor
+                    }).animate({
+                        top: endPositionTop,
+                        left: endPositionLeft,
+                        opacity: 0.2
+                    }, durationFall, 'linear', function () {
+                        $(this).remove()
+                    });
+                }, options.newOn);
+            };
+        })(jQuery);
+        $(function () {
+            $.fn.snow({
+                minSize: 5, /* 定义雪花最小尺寸 */
+                maxSize: 50,/* 定义雪花最大尺寸 */
+                newOn: 300  /* 定义密集程度，数字越小越密集 */
+            });
+        });
+    </script> -->
+
+
+    <!-- 在线聊天工具 -->
+
+
+    <!-- 背景 -->
+
+
+    <!-- 背景静止彩带 -->
+
+
+    <!-- 背景动态彩带 -->
+    <script type="text/javascript">
+        var windowWidth = $(window).width();
+        if (windowWidth > 992) {
+            document.write('<script type="text/javascript" src="libs/background/ribbon-dynamic.js"><\/script>');
+        }
+    </script>
+
+
+
+
+</body>
+
+</html>
