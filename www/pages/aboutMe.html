@@ -1,53 +1,135 @@
 <!DOCTYPE html>
-<html lang="zh">
+<html>
 
 <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <meta http-equiv="Cache-Control" content="no-transform" />
-    <link media="all"
-        href="../css/suai.css"
-        rel="stylesheet" />
-    <title>聪聪帅不帅?</title>
-    <meta name="theme-color" content="#0885ce">
-    <meta name="viewport"
-        content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0, user-scalable=yes">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="white"> <noscript>
-        <p style="color:red;font-weight:bold;font-size:150%;background-color:yellow;line-height:200%;text-align:center">
-            无主界需要使用支持JavaScript的浏览器才可以正常访问，建议使用Chrome或Firefox浏览器。</p>
-    </noscript>
-    <!-- <link rel="shortcut icon" href="https://i.idleleo.com/wp-content/uploads/2018/08/favicon.ico"> -->
-   
-    <meta name="copyright" content="idleleo.com">
-    <!-- <link rel="apple-touch-icon" sizes="180x180"
-        href="https://i.idleleo.com/wp-content/themes/panyi-theme/img/icons/logo-appleN180x180.png"> -->
-    <!-- <link rel="pingback" href="https://www.idleleo.com/xmlrpc.php"> -->
-    <script charset="utf-8" src="../libs/jquery/jquery-2.2.0.min.js"
-        type="text/javascript" async=""></script>
-    <!-- <script charset="utf-8"
-        src="https://i.idleleo.com/wp-content/cache/autoptimize/js/autoptimize_single_f418e24e750f9e2180ac964cc67b1278.js"
-        type="text/javascript" async=""></script> -->
+    <meta charset="utf-8">
+    <title>测试页面</title>
+    <style>
+        html,
+        body {
+            margin: 0px;
+            padding: 0px;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            font-family: "Lantinghei SC", "Open Sans", Arial, "Hiragino Sans GB", STHeiti, "WenQuanYi Micro Hei", SimSun, sans-serif;
+        }
+
+        * {
+            -webkit-box-sizing: border-box;
+            -moz-box-sizing: border-box;
+            box-sizing: border-box;
+        }
+
+        .congcongzuishuai {
+            position: fixed;
+            width: 160px;
+            top: 50%;
+            left: 50%;
+            font-size: 26px;
+            font-weight: 80;
+            margin-top: -100px;
+            margin-left: -80px;
+        }
+
+
+        button {
+            position: fixed;
+            border-radius: 8px;
+            outline:none;
+            border: 1px solid wheat;
+            text-align: center;
+            top: 50%;
+            left: 50%;
+            width: 100px;
+            height: 42px;
+            margin-left: -50px;
+        }
+
+        button.lie {
+            margin-top: -18px;
+            z-index: 1;
+
+            color: dodgerblue;
+            background-color: white;
+
+            user-select: none;
+
+            /* 实现过渡动画效果 */
+            transition: all 0.5s;
+            -moz-transition: all 0.5s;
+            -webkit-transition: all 0.5s;
+            -o-transition: all 0.5s;
+        }
+
+        button.cool {
+            margin-top: 40px;
+            z-index: 2;
+            background-color: dodgerblue;
+            color: white;
+        }
+        span {
+            font-size: 20px;
+        }
+    </style>
 </head>
 
 <body>
-    <p class="panyizuishuai" style="">聪聪帅不帅 ?</p> <button id="iine-1" class="mdc-button mdc-button--unelevated"
-        onclick="panyizuishuai();"><span class="mdc-button__label">太帅了!</span></button> <button id="iine"
-        class="mdc-button mdc-button__ripple mdc-button--outlined" onclick="return false"><span
-            class="mdc-button__label">不帅!</span></button>
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-111334839-1"></script>
-    <script>window.dataLayer = window.dataLayer || [];
-        function gtag() { dataLayer.push(arguments); }
-        gtag('js', new Date());
-        gtag('config', 'UA-111334839-1');</script>
-    <div class="mobmenu-overlay"></div>
-    <div class="mob-menu-header-holder mobmenu" data-detach-el="#scroll" data-menu-display="mob-menu-slideout-over">
-        <div class="mobmenul-container"><a href="javascript:;" class="mobmenu-left-bt" alt="Left Menu Button"><i
-                    class="mob-icon-menu mob-menu-icon"></i><i class="mob-icon-cancel mob-cancel-button"></i></a></div>
-        
-    </div>
-    
-    <script defer='defer'
-        src="../js/suai.js"></script>
+    <p class="congcongzuishuai">聪聪帅不帅?</p>
+    <button class="lie" id="lieButton">
+        <span>不帅!</span>
+    </button>
+    <button class="cool" id="truthButton">
+        <span>太帅了!</span>
+    </button>
+    <script>
+        var lieButton = document.getElementById("lieButton");
+        // 聪聪最帅
+        console.log("聪聪最帅!");
+        lieButton.addEventListener("mouseover", function () {
+            // 边界最大值
+            var maxHeigth = document.body.clientHeight - 100;
+            var maxWidth = document.body.clientWidth - 100;
+
+            var targetX;
+            var targetY;
+            var operatorX;
+            var operatorY;
+
+            // 若超出边界则重新计算
+            do {
+                // 随机取值120~300
+                var randX = (Math.floor(Math.random() * 10)) * 20 + 120;
+                var randY = (Math.floor(Math.random() * 10)) * 20 + 120;
+                // 随机获取0或1代表减或加
+                operatorX = Math.round(Math.random());
+                operatorY = Math.round(Math.random());
+
+                if (operatorX == 1) {
+                    targetX = lieButton.offsetLeft + randX;
+                } else {
+                    targetX = lieButton.offsetLeft - randX;
+                }
+                if (operatorY == 1) {
+                    targetY = lieButton.offsetTop + randY;
+                } else {
+                    targetY = lieButton.offsetTop - randY;
+                }
+            } while (targetX < 100 || targetX > maxWidth || targetY < 100 || targetY > maxHeigth);
+
+            // 改变元素的位置，由css3中trasition属性实现过渡动画效果
+            lieButton.style.left = targetX + "px";
+            lieButton.style.top = targetY + "px";
+        });
+
+        var truthButton = document.getElementById("truthButton");
+        truthButton.addEventListener("click",function(){
+            alert("你可真是一个诚实的好孩子！");
+            alert("什么，你没得选？");
+            alert("怎么会呢 ╮(￣▽ ￣)╭");
+        });
+
+    </script>
 </body>
 
 </html>
